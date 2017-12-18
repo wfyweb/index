@@ -1,2 +1,3 @@
-# index
-第一个github
+# blog
+
+http://wfyweb.com/
