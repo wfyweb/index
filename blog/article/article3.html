@@ -1,0 +1,238 @@
+<!doctype html>
+<!--
+
+  .--,       .--,
+ ( (  \.---./  ) )
+  '.__/o   o\__.'
+     {=    =}
+      >  -  <
+     /       \
+    //       \\
+   //|   .   |\\
+   "'\       /'"_.-~`'-.
+      \  _  /--'
+    ___)( )(___
+   (((__) (__)))
+
+   the valiant knights of programming who toil away.
+
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>函数内部对象 arguments</title>
+  	<link rel="icon" href="../images/handsome1.ico" type="image/x-cio" />
+	<link rel="stylesheet" href="../font/iconfont.css" type="text/css"/>
+	<link rel="stylesheet" href="../css/css-head.css" />
+	<link rel="stylesheet" href="../css/css-return.css" />
+	<link rel="stylesheet" href="css/css-model.css" />
+	<link rel="stylesheet" href="css/css-text.css" />
+	<link rel="stylesheet" href="https://at.alicdn.com/t/font_uymnxyb0kuw3766r.css" />
+</head>
+<body>
+
+	<!-- 头部 -->
+	<div id="head">
+		<ul class="head_list clearfix bs items" id="head_list">
+			<li class="alist" >
+				<a href="../home.html">
+					<span data-hover="首页">首页</span>
+				</a>
+			</li>
+			<li>
+				<a href="../navigation/book.html">
+					<span data-hover="笔记">笔记</span>
+				</a>
+			</li>
+			<li>
+				<a href="../navigation/life.html">
+					<span data-hover="生活">生活</span>
+				</a>
+			</li>
+			<li>
+				<a href="../navigation/domearr.html">
+					<span data-hover="项目">项目</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<span data-hover="留言版">留言版</span>
+				</a>
+			</li>
+			<li>
+				<a href="../navigation/bloger.html">
+					<span data-hover="关于博主">关于博主</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+	<!-- 身体 -->
+	<section id="min">
+
+		<!-- 文章列表 -->
+		<div id="content">
+			<div class="con-wrap clearfix">
+				<div class="con-theme fl bs">
+					<div class="con" id="con">
+						<h1>函数内部对象 arguments</h1>
+						<div class="con-line"></div>
+						<div class="con-des">
+							<i class="iconfont icon-rili" style="margin-right:-2px;"></i><span>2017,1,12</span>
+							<i class="iconfont icon-biaoqian"style="margin-right:5px;"></i><span>javascript</span>
+							<i class="iconfont icon-dianjishou" style="margin-top:-2px;"></i>
+							<script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+							<span id="busuanzi_value_page_pv" style="margin-right:4px;"></span><span>Hits</span>
+						</div>
+						<div class="text">
+						<p class="indent">
+							在函数内部，有两个特殊的对象：<code>arguments</code> 和 <code>this</code>。其中，arguments的主要用途是保存函数参数，他是一个Object对象，有length，index方法，但没有数组的push，pop之类的方法。 但这个对象还有个 <code>callee</code> 的属性，该属性是一个指针，指向拥有这个arguments对象的函数。 通过如下例子，可以更好的理解概念：
+						</p>
+						<p>
+					<pre>
+		(function fn(){
+		   alert( arguments.callee=== fn );
+		})() ;</pre>
+
+						</p>
+						<p>
+							执行上述代码，可以看到alter出来的结果是true，注意，此处用的是“===”，就是说func与arguments.callee对象类型和值都相等。看下面这个非常经典的阶乘函数：
+						</p>
+						<p>
+							<pre>
+		function factorial(num){
+		   if(num&lt;=1){
+			return 1;
+		   }else{
+			return num * factorial(num-1);
+		   }
+		} </pre>
+						</p>
+						<p>
+							定义阶乘函数一般都要用到递归算法；如上面的代码所示，在函数有名字，而且名字以后也不会变 的情况下，这样定义没有问题。但问题是这个函数的执行与函数名 factorial 紧紧结合在了一起。为 了消除这种紧密结合的现象，可以像下面这样使用 arguments.callee
+						</p>
+						<p>
+						<pre>
+		function factorial(num){
+		   if(num&lt;=1){
+			return 1;
+		   }else{
+			return num * arguments.callee(num-1);
+		   }
+		}</pre>
+						</p>
+						<p>
+							在这个重写后的 factorial()函数的函数体内，没有再引用函数名 factorial。这样，无论引用 函数时使用的是什么名字，都可以保证正常完成递归调用。例如：
+						</p>
+						<p>
+							<pre>
+		function factorial(num){
+		   if(num&lt;= 1){
+			return 1;
+		   }else{
+			return num * arguments.callee(num-1);
+		   }
+		}
+		var trueFactorial = factorial;
+		alert( trueFactorial(5) );  <b>// 120 </b>
+
+		factorial = function(){
+		  return 0;
+		}
+		alert( trueFactorial(5)); <b>// 120 如果没有使用arguments.callee，将返回 0 ;</b>
+			</pre>
+						</p>
+						<p style="padding-bottom:50px;">
+							在此，变量 trueFactorial 获得了 factorial 的值，实际上是在另一个位置上保存了一个函数 的指针。然后，我们又将一个简单地返回 0的函数赋值给 factorial 变量。如果像原来的 factorial() 那样不使用 arguments.callee，调用 trueFactorial()就会返回 0。可是，在解除了函数体内的代 码与函数名的耦合状态之后，trueFactorial()仍然能够正常地计算阶乘；至于 factorial()，它现 在只是一个返回 0的函数。
+						</p>
+						</div>
+					</div>
+					<!--PC版-->
+					<div id="SOHUCS" sid="article3"></div>
+				</div>
+				<div class="con-column fr ">
+					<ul class="col-list">
+						<!-- <li>
+							<div class="col-wrap bs">
+								<h3 class="col-wrap-title">
+									<i class="iconfont icon-yinle"></i>
+									音乐
+								</h3>
+								<div class="wrap-music">
+									<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="280" height="110" src="http://music.163.com/outchain/player?type=0&id=629511553&auto=1&height=90"></iframe>
+								</div>
+							</div>
+						</li> -->
+						<li>
+							<div class="col-wrap bs">
+								<h3 class="col-wrap-title">
+									<i class="iconfont icon-tuijian"></i>
+									热门推荐
+								</h3>
+								<div class="wrap-popular bs">
+									<a href="article5.html"><i>1</i>移动端事件及点透问题</a>
+									<a href="article4.html"><i>2</i>如何减少JS的全局变量污染</a>
+									<a href="article3.html"><i>3</i>函数内部对象 arguments</a>
+									<a href="article2.html"><i class="ico">4</i>盒子模型及常见的问题</a>
+									<a href="article1.html"><i class="ico">5</i>html5的新增标签</a>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="col-wrap bs">
+								<h3 class="col-wrap-title">
+									<i class="iconfont icon-wenzhang"></i>
+									最近文章
+								</h3>
+								<div class="wrap-latest wrap-popular">
+									<a href="../404/erroe.html">html5的新增标签</a>
+									<a href="../404/erroe.html">html5的新增标签</a>
+									<a href="../404/erroe.html">html5的新增标签</a>
+									<a href="../404/erroe.html">html5的新增标签</a>
+									<a href="../404/erroe.html">html5的新增标签</a>
+									<a href="../404/erroe.html">html5的新增标签</a>
+									<a href="../404/erroe.html">html5的新增标签</a>
+									<a href="../404/erroe.html">html5的新增标签</a>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="col-wrap bs">
+								<h3 class="col-wrap-title">
+									<i style="padding-left:3px;font-size:24px;"class="iconfont icon-rili"></i>
+									日历
+								</h3>
+								<div id="tb"></div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- 底部 -->
+	<div id="foot">
+		<span>
+			Copyright © 2017  wfyweb.com | 豫ICP备16041179号 | Powered by <a href="javascript:;">Handsome</a>
+		</span>
+	</div>
+	<div id="return">
+		<div class="re_bg"></div>
+		<p>返回顶部</p>
+	</div>
+
+	<!-- 导航 -->
+	<script type="text/javascript" src="../js/daohang.js"></script>
+	<!-- 日历 -->
+	<script type="text/javascript" src="../js/rili.js"></script>
+	<script type="text/javascript">
+		var tb = document.getElementById('tb');
+		calendar();
+	</script>
+	<!-- 返回顶部 -->
+	<script type="text/javascript" src="../js/return.js"></script>
+</body>
+</html>

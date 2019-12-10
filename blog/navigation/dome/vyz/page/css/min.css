@@ -1,0 +1,144 @@
+*{
+        margin:0;
+        padding: 0;
+  			/*-webkit-appearance:none;*/
+  			-webkit-tap-heighlight-color:rgba(255,0,0,0);
+  		}
+  		a{
+  			cursor: pointer;
+  			text-decoration: none;
+  			display: block;
+  		}
+      body, button, input, select, textarea {
+          font: 12px 'Microsoft YaHei','YaHei','SimHei','Hei',Arial,tahoma,arial,sans-serif;
+      }
+  		body{
+  			font-size:16px;
+        color:#333; 
+        padding:0 15px;
+        position: relative;
+        height: 100%;
+  		}
+      .clearfix:after {
+        visibility: hidden;
+        display: block;
+        font-size: 0;
+        content: " ";
+        clear: both;
+        height: 0;
+      }
+      em, var, address, dfn {
+        font-style: italic;
+        font-style: normal;
+      }
+      input{
+        outline: 0;
+      }
+      .all{
+        width:100%;
+        height:100%; 
+        max-width: 650px;
+        margin: auto;
+        background: #fff;
+        overflow: hidden;
+      }
+      .part{
+        width: 95%;
+        height: 255px;
+        margin:70px auto 0;
+        padding: 20px 0;
+      }
+      .part-box{
+          width: 100%;
+          height: 210px;
+          padding: 10px 20px;
+          border-top-style: solid;
+          border-top-width: 5px;
+          border-top-color: rgb(33, 33, 34);
+          box-shadow: rgb(153, 153, 153) 5px 5px 5px 0px;
+          box-sizing: border-box;
+          background-color: rgb(232, 232, 232);
+      }
+     .part-box strong{
+        display: block;
+        margin-top: 20px;
+     }
+     .part-box p{
+        display: block;
+        white-space: normal;
+        background: none;
+        width: 90%;
+        height: 114px;
+        margin:auto;
+        font-size: 14px;
+        color: #666;
+        padding-top:10px; 
+     }
+     #test{
+        width: 90%;
+        height: 309px;
+        margin:auto; 
+     }
+     #test .form-group{
+       width: 100%;
+       margin-right: -15px;
+       margin-left: -15px;
+       margin-bottom: 10px;
+     }
+     #test .f-last{
+      margin:auto; 
+      width: 120%;
+     } 
+     label{
+        display: inline-block;
+        max-width: 100%;
+        margin-bottom: 5px;
+        font-weight: 700;
+     }
+    em.redxing {
+      font-size: 14px;
+      color: #f00;
+      padding: 0 5px;
+      
+    }
+    .form-control {
+      display: block;
+      width: 100%;
+      height: 26px;
+      padding: 6px 12px;
+      font-size: 14px;
+      line-height: 1.42857143;
+      color: #555;
+      background-color: #fff;
+      background-image: none;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+      box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+      -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+      -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+      transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+      }
+      .btn-primary{
+        box-sizing: content-box;
+        display:block;
+        margin:20px auto 30px;
+        margin-left: -15px;
+        width: 83%;
+        height: 34px;
+        padding: 2px 12px;
+        background: #337ab7;
+        border: 1px solid #2e6da4;
+        border-radius:4px; 
+        color: #fff;
+        line-height: 24px;
+        font: 12px 'Microsoft YaHei','YaHei','SimHei','Hei',Arial,tahoma,arial,sans-serif;
+        font-weight: bold;
+        outline: 0;
+      }
+      #copyright{
+        width: 90%;
+        height: 50px;
+        display: block;
+        margin-top: 50px;
+      }

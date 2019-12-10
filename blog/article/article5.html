@@ -1,0 +1,321 @@
+<!doctype html>
+<!--
+
+  .--,       .--,
+ ( (  \.---./  ) )
+  '.__/o   o\__.'
+     {=    =}
+      >  -  <
+     /       \
+    //       \\
+   //|   .   |\\
+   "'\       /'"_.-~`'-.
+      \  _  /--'
+    ___)( )(___
+   (((__) (__)))
+
+   the valiant knights of programming who toil away.
+
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>移动端事件及点透问题</title>
+  	<link rel="icon" href="../images/handsome1.ico" type="image/x-cio" />
+	<link rel="stylesheet" href="../font/iconfont.css" type="text/css"/>
+	<link rel="stylesheet" href="../css/css-head.css" />
+	<link rel="stylesheet" href="../css/css-return.css" />
+	<link rel="stylesheet" href="css/css-model.css" />
+	<link rel="stylesheet" href="css/css-text.css" />
+	<link rel="stylesheet" href="https://at.alicdn.com/t/font_uymnxyb0kuw3766r.css" />
+</head>
+<body>
+
+	<!-- 头部 -->
+	<div id="head">
+		<ul class="head_list clearfix bs items" id="head_list">
+			<li class="alist" >
+				<a href="../home.html">
+					<span data-hover="首页">首页</span>
+				</a>
+			</li>
+			<li>
+				<a href="../navigation/book.html">
+					<span data-hover="笔记">笔记</span>
+				</a>
+			</li>
+			<li>
+				<a href="../navigation/life.html">
+					<span data-hover="生活">生活</span>
+				</a>
+			</li>
+			<li>
+				<a href="../navigation/domearr.html">
+					<span data-hover="项目">项目</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<span data-hover="留言版">留言版</span>
+				</a>
+			</li>
+			<li>
+				<a href="../navigation/bloger.html">
+					<span data-hover="关于博主">关于博主</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+	<!-- 身体 -->
+	<section id="min">
+
+		<!-- 文章列表 -->
+		<div id="content">
+			<div class="con-wrap clearfix">
+				<div class="con-theme fl bs">
+					<div class="con" id="con">
+						<h1>移动端事件及点透问题</h1>
+						<div class="con-line"></div>
+						<div class="con-des">
+							<i class="iconfont icon-rili" style="margin-right:-2px;"></i><span>2017,2,25</span>
+							<i class="iconfont icon-biaoqian"style="margin-right:5px;"></i><span>html5</span>
+							<i class="iconfont icon-dianjishou" style="margin-top:-2px;"></i>
+							<script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+							<span id="busuanzi_value_page_pv" style="margin-right:4px;"></span><span>Hits</span>
+						</div>
+						<div class="text">
+							<p class="indent">
+								移动端事件从字面上我们就理解是在移动端上面去进行操作，触发什么，做出相对应的回应。而我们对于PC端都知道，接触的比多。基本事件有：<code>onclick</code><code>onmouseover</code><code>onmousemove...</code>等事件。下面就了解下移动端事件。
+							</p>
+							<section>
+								<h2 class="herader">一、移动端事件</h2>
+								<p>touchstart：手指放到屏幕上时触发</p>
+								<p>touchmove：手指在屏幕上滑动式触发</p>
+								<p>touchend：手指离开屏幕时触发</p>
+								<p>
+									<pre>
+	var div = document.querySelector('div');
+        div.ontouchstart = function(){
+            this.background = 'red';
+        };
+
+        div.ontouchmove = function () {
+            this.background = 'purple';
+        };
+        div.ontouchend = function () {
+            this.background = 'green';
+        }
+</pre>
+								</p>
+								<p>
+									以上案例我们可以看到：
+									<ul>
+										<li><code>ontouchstart</code>  手指按下对于 PC端<code>onmousedown</code></li>
+										<li><code>ontouchmove</code>手指移动对于 PC端 <code>onmousemove</code></li>
+										<li><code>ontouchend</code>   手指抬起对于 PC端<code>onmouseup</code></li>
+									</ul>
+								</p>
+								<p style="padding:0;">
+									但是我们会发现在谷歌模拟下，通过on方式 添加事件无效。那么有什么办法解决，就是通过 addEventListener()去监听。
+								</p>
+								<p>
+									<pre>
+	var div = document.querySelector('div');
+        div.addEventListener('touchstart', function () {
+            this.style.background = 'red';
+        });
+        div.addEventListener(
+            'touchmove',
+            function () {
+                this.style.background = 'purple';
+            }
+        );
+        div.addEventListener(
+            'touchend',
+            function () {
+                this.style.background = 'green';
+            }
+        );
+    <b>/* 事件监听
+        *  通过 addEventListener('不加on的事件名称',事件函数,冒泡或捕获)方式绑定事件;
+        *  绑定多少个事件就执行多少事件，不会有前后覆盖问题
+        *  在谷歌模拟器下有效
+        * */</b>
+</pre>
+								</p>
+							</section>
+							<section>
+								<h2 class="herader">二、移动端300ms点击延迟</h2>
+								<p class="indent">
+									一般情况下，PC端的click事件在移动端也可以使用。但是通常会出现300ms左右的延迟。也就是说，当我们点击页面的时候在移动端并不是立即作出反应，而是会等上一小会儿才会出现点击的效果。那么，移动端300ms的点击延迟是怎么来的呢？
+								</p>
+								<p>
+									<img src="img/300ms.png" alt="" /><br/>
+									请参考：<a style="color:#3194d0;" target="_blank" href="http://www.linovo.me/front/webapp-300ms.html">《移动端Click300毫秒点击延迟的来龙去脉》</a>
+								</p>
+								<p>
+									也就是说，移动端浏览器会有一些默认的行为，比如双击缩放、双击滚动。这些行为，尤其是双击缩放，主要是为桌面网站在移动端的浏览体验设计的。而在用户对页面进行操作的时候，移动端浏览器会优先判断用户是否要触发默认的行为。
+								</p>
+							</section>
+							<section>
+								<h2 class="herader">三、点透问题</h2>
+								<p>
+									提起移动端点透的问题。可能有人会想，既然click点击有300ms的延迟，那对于触摸屏，我们直接监听touchstart事件不就好了吗？
+								</p>
+								<p>
+									使用touchstart去代替click事件有两个不好的地方：
+									<ul style="padding:0;">
+										<li>1、touchstart是手指触摸屏幕就触发，有时候用户只是想滑动屏幕，却触发了touchstart事件，</li>
+										<li style="list-style:none; text-indent:5em;">这不是我们想要的结果。（误触）</li>
+										<li>2、使用touchstart事件在某些场景下可能会出现点透的现象。</li>
+									</ul>
+								</p>
+								<p>
+									<pre>
+		<b>CSS部分</b>
+	    div{
+                width:150px;
+                line-height:150px;
+                background:gold;
+                position: absolute;
+                top:0;
+                left:0;
+                opacity:0.6;
+		text-align:center;
+             }
+
+		<b>HTML部分</b>
+	 &lt;a href="http://baidu.com"&gt;移动端点透B&lt;/a&gt;
+	 &lt;div&gt;A&lt;/div&gt;
+
+		<b>JS部分</b>
+        var div = document.querySelector('div');
+        div.addEventListener('touchstart', function () {
+            this.style.display = 'none';
+        });
+		</pre>
+								</p>
+								<p>
+									通过上面案例可以看到，有两个元素A和B。B元素在A元素之上。我们在B元素的touchstart事件上注册了一个回调函数，该回调函数的作用是隐藏B元素。我们发现，当我们点击B元素，B元素被隐藏了，随后，A元素触发了click事件。
+								</p>
+								<p>	解决的方案：</p>
+									<ul>
+										<li> 1。 阻止默认事件 （部分安卓机不支持）</li>
+										<li>2。 像移动淘宝一样，不用a标签跳转 （用 window.location.href）,不在移动端使用鼠标事件</li>
+									</ul>
+								<p>
+									下面用原生JS，阻止默认事件解决这样的问题。
+								</p>
+								<p>
+									<pre>
+	 document.addEventListener('touchstart', function (e) {
+            e.preventDefault();
+        });
+        var aA = document.querySelectorAll('a');
+        for(var i=0;i&lt;aA.length;i++){
+            aA[i].addEventListener('touchmove', function () {
+               <b> //在a标签上移动，说明不跳转</b>
+                this.onOff = true; <b>// 移动时,不跳转</b>
+            });
+            aA[i].addEventListener('touchend', function () {
+                <b>//如果最开始没有在A标签上移动，就跳转、</b>
+                if (!this.onOff){
+                    window.location.href = this.href;
+                };
+                <b>//没有移动 是false</b>
+                this.onOff = false; <b>//每次抬起 变成false</b>
+            })
+        }</pre>
+								</p>
+								<p class="indent">
+									以上解决思路就是阻止默认事件，例如：A标签跳转、双击缩放、双击滚动。然后遍历每个A标签，进行监听判断如果在A标签上移动，说明不跳转。如果最开始没有在A标签上移动，就跳转。以上只是个人学习总结，毕竟只是临时的措施。而浏览器本身也有提供的方案，例如 Chrome 的 width=device-width 优化以及 Internet Explorer 的指针事件等，更属长久之计。
+								</p>
+							</section>
+						</div>
+					</div>
+                    <!--PC版-->
+                    <div id="SOHUCS" sid="article5"></div>
+				</div>
+				<div class="con-column fr ">
+					<ul class="col-list">
+						<li>
+							<div class="col-wrap bs">
+								<h3 class="col-wrap-title">
+									<i class="iconfont icon-tuijian"></i>
+									热门推荐
+								</h3>
+								<div class="wrap-popular bs">
+									<a href="article5.html"><i>1</i>移动端事件及点透问题</a>
+									<a href="article4.html"><i>2</i>如何减少JS的全局变量污染</a>
+									<a href="article3.html"><i>3</i>函数内部对象 arguments</a>
+									<a href="article2.html"><i class="ico">4</i>盒子模型及常见的问题</a>
+									<a href="article1.html"><i class="ico">5</i>html5的新增标签</a>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="col-wrap bs">
+								<h3 class="col-wrap-title">
+									<i class="iconfont icon-wenzhang"></i>
+									最近文章
+								</h3>
+								<div class="wrap-latest wrap-popular">
+									<a href="../404/erroe.html">html5的新增标签</a>
+									<a href="../404/erroe.html">html5的新增标签</a>
+									<a href="../404/erroe.html">html5的新增标签</a>
+									<a href="../404/erroe.html">html5的新增标签</a>
+									<a href="../404/erroe.html">html5的新增标签</a>
+									<a href="../404/erroe.html">html5的新增标签</a>
+									<a href="../404/erroe.html">html5的新增标签</a>
+									<a href="../404/erroe.html">html5的新增标签</a>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="col-wrap bs">
+								<h3 class="col-wrap-title">
+									<i style="padding-left:3px;font-size:24px;"class="iconfont icon-rili"></i>
+									日历
+								</h3>
+								<div id="tb"></div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- 底部 -->
+	<div id="foot">
+		<span>
+			Copyright © 2017  wfyweb.com | 豫ICP备16041179号 | Powered by <a href="javascript:;">Handsome</a>
+		</span>
+	</div>
+	<div id="return">
+		<div class="re_bg"></div>
+		<p>返回顶部</p>
+	</div>
+
+	<!-- 导航 -->
+	<script type="text/javascript" src="../js/daohang.js"></script>
+	<!-- 日历 -->
+	<script type="text/javascript" src="../js/rili.js"></script>
+	<script type="text/javascript">
+		var tb = document.getElementById('tb');
+		calendar();
+	</script>
+	<!-- 返回顶部 -->
+	<script type="text/javascript" src="../js/return.js"></script>
+    <script charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/changyan.js" ></script>
+    <script type="text/javascript">
+    window.changyan.api.config({
+    appid: 'cyt2iVNgp',
+    conf: 'prod_0f07b946489cdfe174fd8b1a7ecf74aa'
+    });
+    </script>
+</body>
+</html>

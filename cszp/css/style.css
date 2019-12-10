@@ -1,0 +1,39 @@
+@charset "UTF-8";
+/**
+ *
+ * @authors Your Name (you@example.org)
+ * @date    2017-10-16 09:04:31
+ * @version $Id$
+ */
+*{margin:0;padding:0;}
+html,body{width:100%;background:#122a88;overflow-x:hidden;  }
+img{display:block;}
+ul,li{list-style: none;}
+a{text-decoration:none; }
+#banner{ width: 100%;height: 660px;background:#fff;}
+#banner img{width: 1200px;height: 100%;margin:0 auto; display:block;}
+.index_02{width: 1200px;height: 97px;background:#122a88;text-align: center;}
+.index_02 ul{padding-top:35px;}
+
+.index_02 ul li:before{content:"";position:absolute;top:0;left:-3px;height:100%;border-left:2px solid #fff;}
+.index_02 ul li{display:inline-block;padding:8px 25px;position: relative;font-size: 0;}
+.index_02 ul li:last-child:after{content:"";position:absolute;top:0;right:-3px;height:100%;border-right:2px solid #fff;}
+.index_02 a{color:#fff;font:bold 28px/26px "Micosoft Yahei";}
+#content {max-width:1200px;width: 100%;margin:0 auto;}
+.works{width: 950px;margin:20px auto;}
+.w-list{overflow: hidden;width: 100%;padding: 10px;}
+.w-list li{float:left;margin-right:35px;margin-bottom:20px;width: 280px;}
+.l-box{width: 100%;overflow: hidden;}
+.l-top{width: 280px;height: 185px;}
+.l-top a{width: 100;height: 100%;display: block;}
+.l-top a img{width: 100;height: 100%;display: block;background: #fff;}
+.l-bottom{width: 100%;}
+.l-bottom a{color: #fff;}
+.l-bottom a h3{padding-top:5px;line-height: 28px;font-family: "Microsoft Yahei"}
+.l-bottom a strong{font-size: 12px;}
+.paging{width: 650px;margin:0 auto;}
+.pag-list{width: 100%;}
+.pag-list li{float: left;margin-right:10px;width:40px;height: 40px;border-radius:50%;overflow: hidden;  }
+.pag-list li:nth-child(10){width:70px;}
+.pag-list li:nth-child(10) a{color:#fff;line-height: 40px; padding: 0 10px;}
+.pag-list li:nth-child(11) input{width: 40px;height:40px;background:#fff;border-radius:50%;border:0;color:#122A88;line-height: 40px;font-size:18px;text-align: center;}

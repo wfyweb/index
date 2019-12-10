@@ -1,0 +1,327 @@
+<!doctype html>
+<!--
+
+  .--,       .--,
+ ( (  \.---./  ) )
+  '.__/o   o\__.'
+     {=    =}
+      >  -  <
+     /       \
+    //       \\
+   //|   .   |\\
+   "'\       /'"_.-~`'-.
+      \  _  /--'
+    ___)( )(___
+   (((__) (__)))
+
+   the valiant knights of programming who toil away.
+
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Html5的新增标签</title>
+	<link rel="stylesheet" href="https://at.alicdn.com/t/font_uymnxyb0kuw3766r.css" />
+  	<link rel="icon" href="../images/handsome1.ico" type="image/x-cio" />
+	<link rel="stylesheet" href="../font/iconfont.css" type="text/css"/>
+	<link rel="stylesheet" href="../css/css-head.css" />
+	<link rel="stylesheet" href="../css/css-return.css" />
+	<link rel="stylesheet" href="css/css-model.css" />
+	<link rel="stylesheet" href="css/css-text.css" />
+</head>
+<body>
+
+	<!-- 头部 -->
+	<div id="head">
+		<ul class="head_list clearfix bs items" id="head_list">
+			<li class="alist" >
+				<a href="../home.html">
+					<span data-hover="首页">首页</span>
+				</a>
+			</li>
+			<li>
+				<a href="../navigation/book.html">
+					<span data-hover="笔记">笔记</span>
+				</a>
+			</li>
+			<li>
+				<a href="../navigation/life.html">
+					<span data-hover="生活">生活</span>
+				</a>
+			</li>
+			<li>
+				<a href="../navigation/domearr.html">
+					<span data-hover="收藏">收藏</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<span data-hover="留言版">留言版</span>
+				</a>
+			</li>
+			<li>
+				<a href="../navigation/bloger.html">
+					<span data-hover="关于博主">关于博主</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+	<!-- 身体 -->
+	<section id="min">
+
+		<!-- 文章列表 -->
+		<div id="content">
+			<div class="con-wrap clearfix">
+				<div class="con-theme fl bs">
+					<div class="con" id="con">
+						<h1>Html5的新增标签 </h1>
+						<div class="con-line"></div>
+						<div class="con-des">
+							<i class="iconfont icon-rili" style="margin-right:-2px;"></i><span>2017,12,20</span>
+							<i class="iconfont icon-biaoqian"style="margin-right:5px;"></i><span>html5</span>
+							<i class="iconfont icon-dianjishou" style="margin-top:-2px;"></i>
+							<script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+							<span id="busuanzi_value_page_pv" style="margin-right:4px;"></span><span>Hits</span>
+						</div>
+						<div class="text">
+							<p class="indent">
+								在HTML 5出来之前，我们用<code>div</code>来表示页面章节，但是这些<code>div</code>都没有实际意义。（即使我们用css样式的id和class形容这块内容的意义）。这些标签只是我们提供给浏览器的指令，只是定义一个网页的某些部分。但现在，那些之前没“意义”的标签因为因为html5的出现消失了，这就是我们平时说的“语义”。
+							</p>
+							<p>看下图就是语义化标签来布局:</p>
+							<p class="border">
+								<img src="img/html5-layout.jpg" alt="html5语义化标签" width="500" height="369"/>
+							</p>
+							<section>
+								<h2 class="herader">header元素</h2>
+								<p>header 定义文档的头部区域，一般用在顶部。</p>
+								<p>通常包含<code>h1-h6</code>元素，作为整个页面或者一个内容块的标题。也可以包裹一节的目录部分，一个搜索框，一个<code>nav</code>，或者任何相关logo。</p>
+								<p>整个页面没有限制header元素的个数，可以拥有多个，可以为每个内容块增加一个header元素。</p>
+<p>
+<pre>
+	&lt header &gt
+		&lt h1 &gt我是标题&lt/h1&gt
+		&lt h1&gt我是副标题&lt /h1&gt
+	&lt/header&gt
+</pre>
+</p>
+								<p>header使用注意：</p>
+								<ul>
+									<li>可以是“网页”或任意“section”的头部部分；</li>
+									<li>没有个数限制。</li>
+									<li>如果hgroup或h1-h6自己就能工作的很好，那就不要用header。</li>
+								</ul>
+							</section>
+							<section>
+								<h2 class="herader">nav元素</h2>
+								<p><code>nav</code>元素代表页面的导航链接区域。用于定义页面的主要导航部分。</p>
+<p>
+<pre>
+	&lt nav &gt
+		&lt ul &gt
+			&lt li &gt 列表1&lt /li &gt
+			&lt li &gt 列表2&lt /li &gt
+			&lt li &gt 列表3&lt /li &gt
+		&lt/ul&gt
+	&lt/nav&gt
+</pre>
+</p>
+								<p>nav使用注意：</p>
+								<ul>
+									<li>用在整个页面主要导航部分上，不合适就不要用<code>nav</code>元素；</li>
+								</ul>
+							</section>
+							<section>
+								<h2 class="herader">article元素</h2>
+								<p><code>article</code>元素最容易跟<code>section</code>和<code>div</code>容易混淆，其实<code>article</code>代表一个在文档，页面或者网站中自成一体的内容，其目的是为了让开发者独立开发或重用。除了它的内容，<code>article</code>会有一个标题（通常会在<code>header</code>里），会有一个<code>footer</code>页脚。我们举几个例子介绍一下article，好更好区分article、section、div。</p>
+<p>
+<pre>
+	&lt article &gt
+		&lt h1 &gt 文章标题 &lt /h1 &gt
+		&lt p &gt 文章内容 &lt /p &gt
+		&lt footer &gt
+			&lt p &gt Copyright © 2016 wfyweb.com Powered by Handsome &lt /p &gt
+		&lt /footer &gt
+	&lt/article&gt
+</pre>
+</p>
+								<p>
+									上例是最好简单的article标签使用情况，如果article内部嵌套article，有可能是评论或其他跟文章有关联的内容。那article内部嵌套section一般是什么情况呢。如下：
+								</p>
+<p>
+<pre>
+	&lt article &gt
+		 &lt h1 &gt前端技术&lt /h1 &gt
+		 &lt p&gt前端技术有那些&lt /p&gt
+		 &lt section &gt
+			&lt h2 &gt CSS&lt /h2 &gt
+			&lt p&gt 样式&lt /p&gt
+		 &lt /section &gt
+		 &lt section &gt
+			&lt h2 &gt JS&lt /h2 &gt
+			&lt p&gt 脚本&lt /p&gt
+		 &lt /section &gt
+	&lt /article &gt
+</pre>
+</p>
+								<p>article使用注意：</p>
+								<ul>
+									<li>自身独立的情况下：用article</li>
+									<li>是相关内容：用section</li>
+									<li>没有语义的：用div</li>
+								</ul>
+							</section>
+							<section>
+								<h2 class="herader">aside元素</h2>
+								<p><code>aside</code>元素被包含在article元素中作为主要内容的附属信息部分，其中的内容可以是与当前文章有关的相关资料、标签、名次解释等。（特殊的section）</p>
+								<p>在article元素之外使用作为页面或站点全局的附属信息部分。最典型的是侧边栏，其中的内容可以是日志串连，其他组的导航，甚至广告，这些内容相关的页面。</p>
+<p>
+<pre>
+	&lt article &gt
+		&lt p &gt内容&lt /p&gt
+		&lt aside &gt
+			&lt h1 &gt 作者简介&lt /h1&gt
+			&lt p&gt 作者描述&lt /p&gt
+		&lt /aside&gt
+	&lt /article &gt
+</pre>
+</p>
+								<p>aside使用总结：</p>
+								<ul>
+									<li>aside在article内表示主要内容的附属信息，</li>
+									<li>在article之外则可做侧边栏，没有article与之对应，最好不用。</li>
+									<li>如果是广告，其他日志链接或者其他分类导航也可以用</li>
+								</ul>
+							</section>
+							<section>
+								<h2 class="herader">section元素</h2>
+								<p><code>section</code>元素代表文档中的“节”或“段”，“段”可以是指一篇文章里按照主题的分段；“节”可以是指一个页面里的分组。
+								<code>section</code>通常还带标题，虽然html5中<code>section</code>会自动给标题<code>h1-h6</code>降级，但是最好手动给他们降级。如下：</p>
+<p>
+<pre>
+	&lt section &gt
+			&lt h1 &gt  section是啥？ &lt /h1 &gt
+			&lt article &gt
+				&lt h2 &gt关于section &lt /h2 &gt
+				&lt p &gt section的介绍&lt /p &gt
+				&lt section&gt
+					&lt h3&gt关于其他&lt/h3&gt
+					&lt p&gt 关于其他section的介绍&lt/p&gt
+				&lt/section&gt
+			&lt /article &gt
+	&lt /section &gt
+</pre>
+</p>
+								<p>section使用注意：</p>
+								<p>一张页面可以用section划分为简介、文章条目和联系信息。不过在文章内页，最好用article。section不是一般意义上的容器元素，如果想作为样式展示和脚本的便利，可以用div。</p>
+								<ul>
+									<li>表示文档中的节或者段；</li>
+									<li>article、nav、aside可以理解为特殊的section，所以如果可以用article、nav、aside<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;就不要用section，没实际意义的就用div</li>
+								</ul>
+							</section>
+							<section style="padding-bottom:50px;">
+								<h2 class="herader">footer元素</h2>
+								<p><code>footer</code>元素代表“网页”或“section”的页脚，通常含有该节的一些基本信息，譬如：作者，相关文档链接，版权资料。如果<code>footer</code>元素包含了整个节，那么它们就代表附录，索引，提拔，许可协议，标签，类别等一些其他类似信息。</p>
+<p>
+<pre>
+	&lt;footer&gt;
+			Copyright © 2016 wfyweb.com
+	&lt;footer&gt;
+</pre>
+</p>
+							<p>footer使用注意：</p>
+							<ul>
+								<li>可以是“网页”或任意“section”的底部部分；</li>
+								<li>没有个数限制，除了包裹的内容不一样，其他跟header类似。</li>
+							</ul>
+							</section>
+
+						</div>
+					</div>
+			<!--PC版-->
+<div id="SOHUCS" sid="article1"></div>
+<script charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/changyan.js" ></script>
+<script type="text/javascript">
+window.changyan.api.config({
+appid: 'cyt2iVNgp',
+conf: 'prod_0f07b946489cdfe174fd8b1a7ecf74aa'
+});
+</script>
+			<!-- 底部 -->
+				</div>
+				<div class="con-column fr ">
+					<ul class="col-list">
+						<li>
+							<div class="col-wrap bs">
+								<h3 class="col-wrap-title">
+									<i class="iconfont icon-tuijian"></i>
+									热门推荐
+								</h3>
+								<div class="wrap-popular bs">
+									<a href="article5.html"><i>1</i>移动端事件及点透问题</a>
+									<a href="article4.html"><i>2</i>如何减少JS的全局变量污染</a>
+									<a href="article3.html"><i>3</i>函数内部对象 arguments</a>
+									<a href="article2.html"><i class="ico">4</i>盒子模型及常见的问题</a>
+									<a href="article1.html"><i class="ico">5</i>html5的新增标签</a>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="col-wrap bs">
+								<h3 class="col-wrap-title">
+									<i class="iconfont icon-wenzhang"></i>
+									最近文章
+								</h3>
+								<div class="wrap-latest wrap-popular">
+									<a href="../404/erroe.html">html5的新增标签</a>
+									<a href="../404/erroe.html">html5的新增标签</a>
+									<a href="../404/erroe.html">html5的新增标签</a>
+									<a href="../404/erroe.html">html5的新增标签</a>
+									<a href="../404/erroe.html">html5的新增标签</a>
+									<a href="../404/erroe.html">html5的新增标签</a>
+									<a href="../404/erroe.html">html5的新增标签</a>
+									<a href="../404/erroe.html">html5的新增标签</a>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="col-wrap bs">
+								<h3 class="col-wrap-title">
+									<i style="padding-left:3px;font-size:24px;"class="iconfont icon-rili"></i>
+									日历
+								</h3>
+								<div id="tb"></div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+	</section>
+
+	<div id="foot">
+		<span>
+			Copyright © 2017  wfyweb.com | 豫ICP备16041179号 | Powered by <a href="javascript:;">Handsome</a>
+		</span>
+	</div>
+	<div id="return">
+		<div class="re_bg"></div>
+		<p>返回顶部</p>
+	</div>
+
+	<!-- 导航 -->
+	<script type="text/javascript" src="../js/daohang.js"></script>
+	<!-- 日历 -->
+	<script type="text/javascript" src="../js/rili.js"></script>
+	<script type="text/javascript">
+		var tb = document.getElementById('tb');
+		calendar();
+	</script>
+	<!-- 返回顶部 -->
+	<script type="text/javascript" src="../js/return.js"></script>
+</body>
+</html>

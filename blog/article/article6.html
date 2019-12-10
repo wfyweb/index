@@ -1,0 +1,254 @@
+<!doctype html>
+<!--
+
+  .--,       .--,
+ ( (  \.---./  ) )
+  '.__/o   o\__.'
+     {=    =}
+      >  -  <
+     /       \
+    //       \\
+   //|   .   |\\
+   "'\       /'"_.-~`'-.
+      \  _  /--'
+    ___)( )(___
+   (((__) (__)))
+
+   the valiant knights of programming who toil away.
+
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>H5随机动画</title>
+    <link rel="icon" href="../images/handsome1.ico" type="image/x-cio" />
+    <link rel="stylesheet" href="../font/iconfont.css" type="text/css"/>
+    <link rel="stylesheet" href="../css/css-head.css" />
+    <link rel="stylesheet" href="../css/css-return.css" />
+    <link rel="stylesheet" href="css/css-model.css" />
+    <link rel="stylesheet" href="css/css-text.css" />
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_uymnxyb0kuw3766r.css" />
+</head>
+<body>
+
+    <!-- 头部 -->
+    <div id="head">
+        <ul class="head_list clearfix bs items" id="head_list">
+            <li class="alist" >
+                <a href="../home.html">
+                    <span data-hover="首页">首页</span>
+                </a>
+            </li>
+            <li>
+                <a href="../navigation/book.html">
+                    <span data-hover="笔记">笔记</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span data-hover="生活">生活</span>
+                </a>
+            </li>
+            <li>
+                <a href="../navigation/domearr.html">
+                    <span data-hover="项目">项目</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span data-hover="留言版">留言版</span>
+                </a>
+            </li>
+            <li>
+                <a href="../navigation/bloger.html">
+                    <span data-hover="关于博主">关于博主</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- 身体 -->
+    <section id="min">
+
+        <!-- 文章列表 -->
+        <div id="content">
+            <div class="con-wrap clearfix">
+                <div class="con-theme fl bs">
+                    <div class="con" id="con">
+                        <h1>H5随机动画</h1>
+                        <div class="con-line"></div>
+                        <div class="con-des">
+                            <i class="iconfont icon-rili" style="margin-right:-2px;"></i><span>2017,3,10</span>
+                            <i class="iconfont icon-biaoqian"style="margin-right:5px;"></i><span>html5</span>
+                            <i class="iconfont icon-dianjishou" style="margin-top:-2px;"></i>
+                            <script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+                            <span id="busuanzi_value_page_pv" style="display: inline;"></span><span>Hits</span>
+                        </div>
+                        <div class="text">
+                              <p class="indent">今天看了随机动画挺不错的，自己也跑一下。动画用animation属性配合@keyframes来使用。类似于Flash中的关键帧。以0% ~ 100% 来过渡。用百分比去实现响应式，这样觉得简单点。用JS实现，随机数以及图片自适应居中。</p>
+                              <h2 class="herader" style="margin-top:20px;color: red;">效果图：</h2>
+                              <p><img src="img/article6.jpg" alt=""></p>
+                               <section>
+                                  <h2 class="herader" style="margin-top:20px;">JS：</h2>
+                                  <p>
+                                        <pre>
+
+        var ul = document.querySelector('ul');
+        var li = ul.querySelectorAll('li');
+        var wrap = document.querySelector('.wrap');
+        (function(){
+             var arr = ['top','roc','sca','compressx','compressy'];
+             var a,b;
+             for (var i = 0; i < li.length; i++) {
+                     li[i].onmouseenter = function(){
+                        while(b==a){
+                            a=Math.floor(Math.random()*5);
+                        }
+                        console.log(a);
+                        this.className = arr[a];
+                        b=a;
+                    }
+             };
+         })();
+
+         (function(){
+            var pic = document.querySelector('#pic');
+            for( var i=0;i@gt;li.length;i++){
+                li[i].index = i;
+                li[i].onclick = function(){
+                    wrap.style.display = 'block';
+                    pic.src="img/"+(this.index+1)+".jpg";
+                };
+            }
+            pic.onclick = function(){
+                wrap.style.display="none";
+            };
+         })();
+         (function(){
+             window.onresize = function(){
+                    var w = document.documentElement.clientWidth-wrap.offsetWidth;
+                    var h = document.documentElement.clientHeight-wrap.offsetHeight;
+                    wrap.cssText = 'left:'+w/2+'px;top:'+h/2+'px;';
+                }
+        })();
+</pre>
+                                  </p>
+                              </section>
+                              <section>
+                                    <ul class="thumbile">
+                                        <a target="_blank" href="http://www.wfyweb.com/dome1/"><li class="Dome">查看演示</li></a>
+                                        <a href="http://www.wfyweb.com/dome1.zip"><li class="Dome Down">立即下载</li></a>
+                                    </ul>
+                              </section>
+                              <section>
+                                    <div style="font-size: 18px">ps：</div>
+                                    <section style="text-indent:1em;font-size: 12px">
+                                         <div>1、如果您对模板有什么建议，可以给我们留言，我们会及时处理；</div>
+                                        <div>2、如果您使用时有技术问题，可以加群（161572584）交流；</div>
+                                        <div>3、本站仅供学习交流，严禁商业用途，否则必其究法律责任；</div>
+                                    </section>
+
+                              </section>
+                        </div>
+                    </div>
+                    <!--PC版-->
+                    <div id="SOHUCS" sid="article6"></div>
+                </div>
+                <div class="con-column fr ">
+                    <ul class="col-list">
+                        <li>
+                            <div class="col-wrap bs">
+                                <h3 class="col-wrap-title">
+                                    <i class="iconfont icon-tuijian"></i>
+                                    热门推荐
+                                </h3>
+                                <div class="wrap-popular bs">
+                                    <a href="article5.html"><i>1</i>移动端事件及点透问题</a>
+                                    <a href="article4.html"><i>2</i>如何减少JS的全局变量污染</a>
+                                    <a href="article3.html"><i>3</i>函数内部对象 arguments</a>
+                                    <a href="article2.html"><i class="ico">4</i>盒子模型及常见的问题</a>
+                                    <a href="article1.html"><i class="ico">5</i>html5的新增标签</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="col-wrap bs">
+                                <h3 class="col-wrap-title">
+                                    <i class="iconfont icon-wenzhang"></i>
+                                    最近文章
+                                </h3>
+                                <div class="wrap-latest wrap-popular">
+                                    <a href="../404/erroe.html">html5的新增标签</a>
+                                    <a href="../404/erroe.html">html5的新增标签</a>
+                                    <a href="../404/erroe.html">html5的新增标签</a>
+                                    <a href="../404/erroe.html">html5的新增标签</a>
+                                    <a href="../404/erroe.html">html5的新增标签</a>
+                                    <a href="../404/erroe.html">html5的新增标签</a>
+                                    <a href="../404/erroe.html">html5的新增标签</a>
+                                    <a href="../404/erroe.html">html5的新增标签</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="col-wrap bs">
+                                <h3 class="col-wrap-title">
+                                    <i style="padding-left:3px;font-size:24px;"class="iconfont icon-rili"></i>
+                                    日历
+                                </h3>
+                                <div id="tb"></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+        </div>
+
+    </section>
+    <!-- 底部 -->
+    <div id="foot">
+        <span>
+            Copyright © 2017  wfyweb.com | 豫ICP备16041179号 | Powered by <a href="javascript:;">Handsome</a>
+        </span>
+    </div>
+    <div id="return">
+        <div class="re_bg"></div>
+        <p>返回顶部</p>
+    </div>
+
+    <!-- 导航 -->
+    <script type="text/javascript" src="../js/daohang.js"></script>
+    <!-- 日历 -->
+    <script type="text/javascript" src="../js/rili.js"></script>
+    <script type="text/javascript">
+        var tb = document.getElementById('tb');
+        calendar();
+    </script>
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+        <script type="text/javascript">
+            var duoshuoQuery = {short_name:"box"};
+            (function() {
+                var ds = document.createElement('script');
+                ds.type = 'text/javascript';ds.async = true;
+                ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+                ds.charset = 'UTF-8';
+                (document.getElementsByTagName('head')[0]
+                 || document.getElementsByTagName('body')[0]).appendChild(ds);
+            })();
+        </script>
+    <!-- 多说公共JS代码 end -->
+    <!-- 返回顶部 -->
+    <script type="text/javascript" src="../js/return.js"></script>
+    <script charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/changyan.js" ></script>
+    <script type="text/javascript">
+    window.changyan.api.config({
+    appid: 'cyt2iVNgp',
+    conf: 'prod_0f07b946489cdfe174fd8b1a7ecf74aa'
+    });
+    </script>
+</body>
+</html>

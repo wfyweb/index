@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <!-- 调试阶段希望不要缓存 -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <!-- end -->
+    <!-- 头部信息 -->
+    <meta name='Keywords' content="王方远，宋琦，结婚，倒计时" />
+    <meta name="Description" content="王方远 ❤ 宋琦的婚礼倒计时，真诚的邀请各位参加我的婚礼。" />
+    <meta name="sharecontent" data-msg-img="http://wfyweb.com/marryTime/web.jpg" data-msg-title="王方远 ❤ 宋琦的婚礼倒计时"
+        data-msg-content="真诚的邀请各位参加我的婚礼。" data-msg-callback="" data-line-img="http://wfyweb.com/marryTime/web.jpg"
+        data-line-title="王方远 ❤ 宋琦的婚礼倒计时" data-line-callback="">
+    <!-- end -->
+    <title>王方远 ❤ 宋琦的婚礼倒计时</title>
+    <script type="text/javascript">
+        if (window.top !== window.self) {
+            top.location = self.location;
+        }
+    </script>
+    <style>
+        b {
+            color: red;
+            text-shadow: 2px 2px 2px #fff;
+
+        }
+        html,body{
+            width: 100%;
+            height: 100%;
+        }
+        body {
+            width: 100%;
+            height: 100%;
+            -webkit-font-smoothing: antialiased;
+            font-family: Helvetica Neue, Helvetica, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
+            background: url('./images/web.jpg') no-repeat 100% 100%;
+            background-size: cover;
+            font-size: 85%;
+            margin: 0;
+        }
+        #music .music-Bg{
+            position: fixed;
+            top:20px;
+            right:0px;
+            width: 58px;
+            height:58px;
+        }
+        #music .music-Bg.music-spread{
+            background:url('../invitation/images/music_c0fda01.gif') no-repeat center center;
+            background-size:58px 58px;
+        }
+
+        #music .music-Bg .music-bg{
+            position: absolute;
+            width: 35px;
+            height:35px;
+            top:15px;
+            right:15px;
+            background:url('../invitation/images/music_off_8d94020.png');
+            background-size:100% 100%;
+            z-index:-1;
+        }
+        #music .music-Bg .music-bg.music-bg-auto{
+            -webkit-animation: musAuto 4s linear infinite;
+            -moz-animation: musAuto 4s linear infinite;
+            -ms-animation: musAuto 4s linear infinite;
+            -o-animation: musAuto 4s linear infinite;
+            animation: musAuto 4s linear infinite;
+        }
+        @-webkit-keyframes musAuto{
+            0%{transform: rotate(0deg)}
+            100%{transform: rotate(360deg)}
+        }
+        @-moz-keyframes musAuto{
+            0%{transform: rotate(0deg)}
+            100%{transform: rotate(360deg)}
+            }
+        @-mz-keyframes musAuto{
+            0%{transform: rotate(0deg)}
+            100%{transform: rotate(360deg)}
+        }
+        @-o-keyframes musAuto{
+            0%{transform: rotate(0deg)}
+            100%{transform: rotate(360deg)}
+        }
+        @keyframes musAuto{
+            0%{transform: rotate(0deg)}
+            100%{transform: rotate(360deg)}
+        }
+
+        h1 {
+            font-size: 240%;
+            font-weight: 700;
+            
+        }
+        .content {
+            position: absolute;
+            width: 100%;
+            top: 40%;
+            transform: translate(0, -50%);
+            text-align: center;
+            color: #2085AC;
+            text-shadow: 0px 4px 5px #fff;
+        }
+        
+        .invitation{
+            position: absolute;
+            width: 100%;
+            bottom: 10%;
+            transform: translate(0, -50%);
+            text-align: center;
+            color: #385F7C;
+            font-weight:700; 
+            text-shadow: 5px 5px 15px #fff;
+        }
+        .timer {
+            font-size: 180%;
+            line-height: 1.5;
+            margin: 1em 0;
+        }
+        .timer b {
+            color: red;
+        }
+        .browsehappy {
+            color: #fff;
+            font-size: 18px;
+            text-align: center;
+            position: relative;
+            top: 49%
+        }
+        @media (max-width: 979px) {
+            body {
+                background: url('./images/m.jpg') no-repeat 100% 100%;
+                background-size: cover;
+            }
+            .content {
+                color: #F6F9FE;
+                text-shadow: 2px 2px 2px #028EB0;
+                font-weight:600; 
+            }
+            .timer {
+                font-size: 140%;
+                line-height: 1.2;
+                margin: 1em 0;
+                text-shadow: 2px 2px 2px #028EB0;
+                font-weight:600; 
+            }
+            h1 {
+                font-size: 210%;
+                font-weight: 700;
+            }
+            .invitation{
+                color: #F6F9FE;
+                text-shadow: 2px 2px 2px rgb(3, 45, 56);
+                font-weight:600; 
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!--[if lt IE 8]>
+    <p class="browsehappy">
+      你正在使用一个<strong>过时</strong>的浏览器。请<a class="link" href="http://browsehappy.com" target="_blank">升级你的浏览器</a>以查看网页。</p>
+    </p>
+    <![endif]-->
+    <div id="music">
+        <audio id="music-audio" class="audio" autoplay loop autoplay="autoplay">
+            <source src="./music/music.mp3" type="audio/mp3" />
+        </audio>
+        <div class="music-Bg music-spread">
+            <div class="music-bg music-bg-auto"></div>
+        </div>
+    </div>
+
+    <div class="content">
+        <h1>王方远<b> ❤ </b>宋琦的婚礼</h1>
+        <h1>计时</h1>
+        <div class="timer">
+            <b id="d"></b> 天 <b id="h"></b> 时 <b id="m"></b> 分 <b id="s"></b> 秒
+        </div>
+
+    </div>
+    <div class="invitation">
+        2018年11月6日 星期二 农历九月二十九 <br />我们结婚了！
+    </div>
+    <script>
+        function timer() {
+            var now = new Date();
+            var endTime = new Date(2018, 10, 6, 8);
+            var t = now - endTime;
+            document.getElementById('d').innerHTML = ~~(t / 1000 / 60 / 60 / 24);
+            document.getElementById('h').innerHTML = ~~(t / 1000 / 60 / 60 % 24);
+            document.getElementById('m').innerHTML = ~~(t / 1000 / 60 % 60);
+            document.getElementById('s').innerHTML = ~~(t / 1000 % 60);
+            setTimeout(timer, 1000);
+        }
+        timer();
+        
+        var MusicBtn = document.querySelector('.music-Bg');
+        var music = document.querySelector('.music-bg');
+        var audio = document.querySelector('#music-audio');
+                
+
+         window.onload = function() {
+                //监听微信
+                document.addEventListener('WeixinJSBridgeReady', audioPlay, false);
+                //点击页面加载音乐
+                document.addEventListener('click',audioPlay, false);
+                function audioPlay(){
+                    audio.play()
+                    document.removeEventListener("click",audioPlay, false);
+                    document.removeEventListener("WeixinJSBridgeReady",audioPlay, false);
+                }
+                ///////////////
+                
+
+                //点击图标切换音乐
+                (function(){
+                    MusicBtn.addEventListener('click',
+                        function () {
+                            MusicBtn.classList.toggle('music-spread');
+                            var isPLay = music.classList.toggle('music-bg-auto');
+                            isPLay ? audio.play() : audio.pause();
+                        });
+                })()
+
+            }
+    </script>
+</body>
+
+</html>

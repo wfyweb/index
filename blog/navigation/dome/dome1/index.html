@@ -1,0 +1,185 @@
+<!doctype html>
+<!--
+
+  .--,       .--,
+ ( (  \.---./  ) )
+  '.__/o   o\__.'
+     {=    =}
+      >  -  <
+     /       \
+    //       \\
+   //|   .   |\\
+   "'\       /'"_.-~`'-.
+      \  _  /--'
+    ___)( )(___
+   (((__) (__)))
+
+   the valiant knights of programming who toil away.
+
+-->
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>随机动画（响应式）</title>
+        <style type="text/css">
+            *{
+                margin:0;
+                padding:0;
+            }
+            .box{
+                width: 100%;
+                height: 100%;
+                background:#eee;
+                position:relative;
+                overflow: hidden;
+            }
+            .box ul{
+                list-style: none;
+                width:90%;
+                display: flex;
+                flex-wrap: wrap;
+                padding:2.5% 5%;
+            }
+            .box ul li{
+                flex: auto;
+                margin:10px;
+                border: 5px solid #fff;
+                width: 320px;
+                height: 288px;
+            }
+            .box ul li img{
+                width: 100%;
+                height: 100%;
+            }
+            .box ul li a:hover{cursor:-webkit-zoom-in}
+            .box ul li.top{
+                animation:top 1s;
+            }
+            .box ul li.compressx{
+                animation:compressx 1s;
+            }
+            .box ul li.rot{
+                animation:rot 1s;
+            }
+            .box ul li.compressy{
+                animation:compressy 1s;
+            }
+            .box ul li.sca{
+                animation:sca 1s;
+            }
+            @keyframes top{
+                0%{transform: translateY(0px);}
+                25%{transform: translateY(-10px);}
+                50%{transform: translateY(10px);}
+                75%{transform: translateY(-10px);}
+                100%{transform: translateY(0px);}
+            }
+            @keyframes compressx{
+                0%{transform: rotateX(0deg);}
+                25%{transform: rotateX(20deg);}
+                50%{transform: rotateX(-20deg);}
+                75%{transform: rotateX(20deg);}
+                100%{transform: rotateX(0deg);}
+            }
+            @keyframes rot{
+                0%{transform: rotate(0deg);}
+                25%{transform: rotate(10deg);}
+                50%{transform: rotate(-10deg);}
+                75%{transform: rotate(10deg);}
+                100%{transform: rotate(0deg);}
+            }
+            @keyframes compressy{
+                0%{transform: rotateY(0deg);}
+                25%{transform: rotateY(20deg);}
+                50%{transform: rotateY(-20deg);}
+                75%{transform: rotateY(20deg);}
+                100%{transform: rotateY(0deg);}
+            }
+            @keyframes sca{
+                0%{transform: scale(1);}
+                25%{transform: scale(1.1);}
+                50%{transform: scale(0.9);}
+                75%{transform: scale(1.1);}
+                100%{transform: scale(1);}
+            }
+            .wrap{
+                position: fixed;
+                top:5%;
+                left:15%;
+                width: 70%;
+                border:5px solid #ddd;
+                display:none;
+                cursor: pointer;
+            }
+            .wrap img{
+                width: 100%;
+                height: 100%;
+                display:block;
+            }
+        </style>
+ </head>
+ <body>
+
+     <div class="box">
+        <ul>
+            <li><a href="javascript:;"><img src="img/1.jpg" alt=""></a></li>
+            <li><a href="javascript:;"><img src="img/2.jpg" alt=""></a></li>
+            <li><a href="javascript:;"><img src="img/3.jpg" alt=""></a></li>
+            <li><a href="javascript:;"><img src="img/4.jpg" alt=""></a></li>
+            <li><a href="javascript:;"><img src="img/5.jpg" alt=""></a></li>
+            <li><a href="javascript:;"><img src="img/6.jpg" alt=""></a></li>
+            <li><a href="javascript:;"><img src="img/7.jpg" alt=""></a></li>
+            <li><a href="javascript:;"><img src="img/8.jpg" alt=""></a></li>
+            <li><a href="javascript:;"><img src="img/9.jpg" alt=""></a></li>
+            <li><a href="javascript:;"><img src="img/10.jpg" alt=""></a></li>
+            <li><a href="javascript:;"><img src="img/11.jpg" alt=""></a></li>
+            <li><a href="javascript:;"><img src="img/12.jpg" alt=""></a></li>
+        </ul>
+        <div class="wrap"><img id="pic"src="img/1.jpg" alt=""></div>
+     </div>
+     <script>
+         var ul = document.querySelector('ul');
+         var li = ul.querySelectorAll('li');
+         var wrap = document.querySelector('.wrap');
+        (function(){
+             var arr = ['top','roc','sca','compressx','compressy'];
+             var a,b;
+             for (var i = 0; i < li.length; i++) {
+                     li[i].onmouseenter = function(){
+                        while(b==a){
+                            a=Math.floor(Math.random()*5);
+                        }
+                        console.log(a);
+                        this.className = arr[a];
+                        b=a;
+                    }
+             };
+         })();
+
+         (function(){
+            var pic = document.querySelector('#pic');
+            for( var i=0;i<li.length;i++){
+                li[i].index = i;
+                li[i].onclick = function(){
+                    wrap.style.display = 'block';
+                    pic.src="img/"+(this.index+1)+".jpg";
+                };
+            }
+            pic.onclick = function(){
+                wrap.style.display="none";
+            };
+         })();
+         (function(){
+             window.onresize = function(){
+                    var w = document.documentElement.clientWidth-wrap.offsetWidth;
+                    var h = document.documentElement.clientHeight-wrap.offsetHeight;
+                    wrap.cssText = 'left:'+w/2+'px;top:'+h/2+'px;';
+                }
+        })();
+     </script>
+ </body>
+</html>

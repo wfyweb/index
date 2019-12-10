@@ -1,0 +1,1028 @@
+<!doctype html>
+<!--
+
+  .--,       .--,
+ ( (  \.---./  ) )
+  '.__/o   o\__.'
+     {=    =}
+      >  -  <
+     /       \
+    //       \\
+   //|   .   |\\
+   "'\       /'"_.-~`'-.
+      \  _  /--'    
+    ___)( )(___
+   (((__) (__)))   
+   
+   the valiant knights of programming who toil away.
+	
+-->
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Handsome</title>
+  <link rel="icon" href="../../img/handsome1.ico" type="image/x-cio" /> 
+		<style type="text/css">
+			*{
+				margin:0;
+				padding:0;
+			}
+			a{text-decoration:none;}
+			ul,li{list-style:none;}
+			.clearfix:after{
+				content:'';
+				display:block;
+				clear:both;
+			} 
+			#header{
+				min-width:1200px;
+				overflow:hidden;
+			}
+			
+			#header .container{
+				width:1200px;
+				margin:auto;
+				padding-bottom:15px;
+			}
+			#header .container .header_top{
+				position:relative;
+			}
+			#header .container .header_top .tips{
+				position:absolute;
+				top:18px;
+				left:28px;
+				display:block;
+				font:14px/20px 'Microsoft yahei';
+				color:#3f2900;
+				cursor:pointer;
+				
+			}
+			#header .container .header_top .log-wrap{
+				padding:35px 0;
+				text-align:center;
+			}
+			#header .container .header_top .log-wrap img:nth-child(1){
+				margin-left:30px;
+				vertical-align:middle;
+			}
+			#header .container .header_top .log-wrap img:nth-child(2){
+				margin-left:10px;
+				vertical-align:middle;
+			}
+			#header .container .header_top .log-wrap a{
+				padding:0 5px;
+				color:#8e8e8e;
+				font:14px/20px 'Microsoft yahei';
+			}
+			#header .container .header_top .log-wrap a.right{
+				padding-right:10px;
+				border-right:1px solid #ddd;			
+			}
+			#header .container .header_top .header_top_hot{
+				position:absolute;
+				top:0;
+				right:-28px;
+				vertical-align:middle;
+			}
+			#header .container ul{
+				width:100%;
+				text-align:center;
+			}
+			#header .container ul li{
+				width:150px;
+				display:inline-block;
+			}
+			#header .container ul li a h3{
+				color:#3f2900;
+				font:16px/25px 'Microsoft yahei';		
+			}
+			#header .container ul li a span{
+				color:#634100;
+				font:14px/22px 'Microsoft yahei';
+			}
+			#main{
+				min-width:1200px;
+				overflow:hidden;
+			}
+			#main .main-banner{
+				border-top:2px solid #634100;
+				position:relative;
+			}
+			#main .main-banner a{
+				display: block;
+				width: 40px;
+				height: 70px;
+				position: absolute;
+				top: 50%;
+				margin-top: -35px;
+				cursor: pointer;
+			}
+			#main .main-banner a.prev{
+				left: 0;
+				background: url('images/icon-slides.png') no-repeat -84px 50%;
+				
+			}
+			#main .main-banner a.prev:hover{
+				background: url('images/icon-slides.png') no-repeat -2px 50%;
+			}
+			#main .main-banner a.next{
+				right:0px;
+				background:url('images/icon-slides.png') no-repeat -125px 50%;;
+			}
+			#main .main-banner a.next:hover{
+				background: url('images/icon-slides.png') no-repeat -41px 50%;
+			}
+			#main-banner{
+				position:relative;
+				height:500px;
+				background:#333;
+			}
+			#main-banner li{
+				position:absolute;
+				top:0;
+				left:0;
+				width:100%;
+				height:100%;
+				/* display:none; */
+				overflow:hidden;
+				opacity:0;
+				filter:alpha(opacity=0);
+			}
+			#main-banner li img{
+				width:100%;
+			}
+			#main-btn{
+				padding:20px 0;
+				border-top:1px solid #ddd;
+				border-bottom:1px solid #ddd;
+				text-align:center;
+				
+			}
+			#main-btn li{
+				display:inline-block;
+				margin:0 5px;
+				width:10px;
+				height:10px;
+				border-radius:5px;
+				background:#5b431d;
+				cursor:pointer;
+			}
+			#main-btn li.on{
+				background:#c98641;
+			}
+			#news{
+				padding:55px 0;
+				position:relative;
+				width:1200px;
+				margin:auto;
+			}
+			#news a img.icon-member{
+				position:absolute;
+				top:-60px;
+				right:-18px;
+				z-index:999;
+				vertical-align:bottom;
+			}
+			#news .new-content{
+				float:left;
+				width:461px;
+			}
+			#news .new-content dt{
+				text-align:center;
+			}
+			#news .new-content dt h1{
+				font:24px/35px 'Microsoft yahei';
+				color:#333;
+				padding-bottom:30px;
+			}
+			#news .new-content dt h1 span{
+				color:#ddd;
+				font:18px/35px 'Microsoft yahei';
+				margin-left:10px;
+			}
+			#news .new-content dd{
+				width:100%;
+				text-align:center;
+				height:67px;
+				padding-bottom:25px;
+			} 
+			#news .new-content dd .new-timer{
+				float:left;
+				width:66px;
+				height:66px;
+				border-radius:33px;
+				border:1px solid #c5aa60;
+			}
+			#news .new-content dd .new-timer span:nth-child(1){
+				display:block;
+				width:66px;
+				height:33px;
+				border-radius:33px 33px 0 0 ;
+				background:#c5aa60;
+				color:#fff;
+				font:14px/33px 'Microsoft yahei';
+			}
+			#news .new-content dd .new-timer span:nth-child(2){
+				display:block;
+				width:66px;
+				height:33px;
+				color:#c5aa60;
+				font:14px/33px 'Microsoft yahei';
+			}
+			#news .new-content dd .new-right{
+				width:368px;
+				float:left;
+				margin-left:25px;
+			}
+			#news .new-content dd .new-right h3{
+				color:#c5aa60;
+				font:bold 14px/20px 'Microsoft yahei';
+				text-align:left;
+				padding-bottom:10px;
+			}
+			#news .new-content dd .new-right p{
+				color:#000;
+				font:12px/20px 'Microsoft yahei';
+				text-align:left;
+				padding-bottom:10px;
+			}
+			#news .new-content dd:last-child{
+				height:35px;
+			}
+			#news .new-content dd a img{
+				 vertical-align:bottom; 
+			}
+			#news .new-content dd a span{
+				font:14px/20px 'Microsoft yahei';
+				color:#333;
+			}
+			#news .coffee-banner{
+				float:right;
+				width:657px;
+				padding-right:45px;
+			}
+			#news .coffee-banner img{
+				float:right;
+				vertical-align:bottom;
+			}
+			#news .coffee-banner .news-banner{
+				float:right;
+				position:relative;
+			}
+			#news .coffee-banner .news-banner .banner-pic{
+				
+				margin-top:15px;
+				width:620px;
+				height:160px;
+				overflow:hidden;
+			}
+			#news .coffee-banner .news-banner .banner-pic .banner{
+				width:500%;
+			}
+			#news .coffee-banner .news-banner .banner-pic .banner li{
+				float:left;
+				margin-right:24px;
+				width:191px;
+				height:159px;
+				cursor:pointer;
+				overflow:hidden;
+			}
+			#news .coffee-banner .news-banner .banner-pic .banner li img{
+				float:left;
+				vertical-align:bottom;
+				width:191px;
+				height:159px;
+				transition:0.3s;
+				
+			}
+			#news .coffee-banner .news-banner .banner-pic .banner li:hover img{
+				-webkit-transform:scale(1.23);-moz-transform: scale(1.23);-o-transform:scale(1.23);
+			}
+			#sidBar{
+				position:absolute;
+				top:822px;
+				right:150px;
+				width:113px;
+				height:475px;
+				background:url('images/side-bg.jpg') no-repeat center bottom;
+				z-index:99;
+			}
+			#sidBar li{
+				width:48px;
+				line-height:48px;
+				margin:5px auto;
+				text-align:center;
+				color:#fff;
+				font-size:14px;
+				font-family:'Microsoft yahei';
+				background:url('images/side1.png') no-repeat center top;
+				cursor:pointer;
+			}
+			#sidBar li:last-child{
+				height:150px;
+				background-position:center -53px;
+			}
+			#introduction{
+				display:block;
+				background:url('images/introduction-bg.png') no-repeat center top/100% 80%;
+			}
+			#introduction .in-container{
+				position:relative;
+				text-align:center;
+				width:1200px;
+				height:480px;
+				margin:auto;
+				border-top:1px dashed #ddd;
+			}
+			#introduction .in-container img.in-con-pic{
+				position:absolute;
+				top:0px;
+				left:50%;
+				margin-left:-200px;
+			}
+			#introduction .in-container h1{
+				display:inline-block;
+				padding:40px 18px;
+				color:#583300;
+				font:24px/35px 'Microsoft yahei';
+				background:url('images/intro-tit.jpg') no-repeat right;
+			}
+			#introduction .in-container h1 span{
+				color:#ddd;
+				margin-left:15px;
+				font:18px/35px 'Microsoft yahei';
+			}
+			#introduction .in-container .in-con-p{
+				position:relative;
+				text-align:center;
+			}
+			#introduction .in-container .in-con-p p{
+				color:#666;
+				font:14px/35px 'sisum';
+				margin-bottom:40px;
+			}
+			#introduction .in-container .in-con-p span{
+				color: #c4a06c;
+				font:14px/20px 'Microsoft yahei';
+				cursor:pointer;
+			}
+			#introduction .in-container .in-con-p span img{
+				vertical-align:bottom;
+			}
+			#introduction .in-container .in-con-p .maizi{
+				position:absolute;
+				left:60px;
+				top:100px;
+			}
+			#introduction .in-container .in-con-p .coffee-1{
+				position:absolute;
+				left:100px;
+				top:140px;
+			}
+			#introduction .in-container .in-con-p .coffee-2{
+				position:absolute;
+				right:50px;
+				top:100px;
+			}
+			#b-banner{
+				height:529px;
+				background:url('images/product.jpg') no-repeat center/cover;
+			}
+			#b-banner .b-ban-con{
+				min-width:1200px;
+				margin:auto;
+				text-align:center;
+			}
+			#b-banner .b-ban-con h3{
+				padding:40px 0;
+			}
+			#b-wrap{
+				width:1140px;
+				height:294px;
+				padding:40px 30px 30px;
+				background:#fff;
+				margin:auto;
+				position:relative;
+			}
+			#b-wrap .b-wrap-con{
+				position:relative;
+				width:1140px;
+				height:315px;
+				overflow:hidden;
+			}
+			#b-content{
+				width:1000%;
+				position:absolute;
+				top:0px;
+				left:0px;
+			}
+			#b-content li{
+				float:left;
+				margin-left:15px;
+				cursor:pointer;
+			}
+			#b-content li p{
+				font:14px/55px 'Microsoft yahei';
+			}
+			#b-con-btn a{
+				display:block;
+				position:absolute;
+				top:50%;
+				width:46px;
+				height:45px;
+				
+			}
+			#b-con-btn a:first-child{
+				left:-108px;
+				background:url('images/duc-prev.png');
+			}
+			#b-con-btn a:last-child{
+				right:-108px;
+				background:url('images/duc-next.png');
+			}
+			#footer{
+				min-width:1200px;
+				overflow:hidden;
+				height:500px;
+			}
+			#friend-link{
+				padding:88px 0 38px;
+				width:1200px;
+				margin:auto;
+			}
+			#friend-link .saoma{
+				float:left;
+				padding-left:24px;
+			}
+			#friend-link .saoma ul{
+				width:448px;
+				height:110px;
+			}
+			#friend-link .saoma ul li:nth-child(1){
+				float:right;
+			}
+			#friend-link .saoma ul li:nth-child(2){
+				float:right;
+				margin-top:25px;
+				margin-right:5px;
+				text-align:center;
+			}
+			#friend-link .saoma ul li:nth-child(2) a{
+				display:block;
+				padding:27px 26px 23px;
+				font:14px/25px 'Microsoft yahei';
+				margin-right:40px;
+				border:1px dashed #c4a16c;
+				color:#000;
+			}
+			#friend-link .saoma ul li:nth-child(3){
+				float:right;
+				margin-top:25px;
+				margin-right:5px;
+			}
+			#friend-link .saoma ul li:nth-child(3) a {
+				display:block;
+				border:1px solid #ddd;
+			}
+			#friend-link .brand-link{
+				position:relative;
+				float:right;
+				width:642px;
+				height:172px;
+				background: url('images/link.png')left 30px no-repeat ;
+			}
+			#friend-link .brand-link h3{
+				font:24px/35px 'Microsoft yahei';
+				color:#000;
+			}
+			#friend-link .brand-link .b-lin-text{
+				position:absolute;
+				padding-top:33px;
+				left:174px;
+				top:5px;
+				width:110px;
+				height:33px;
+				text-align:center;
+				border:1px dashed #c4a16c;
+				font:14px/33px 'Microsoft yahei';
+				color:#000;
+			}
+			#friend-link .brand-link .b-lin-list{
+				width:100%;
+				margin-top:64px;
+			
+			}
+			#friend-link .brand-link .b-lin-list li{
+				float:right;
+				width:144px;
+				height:72px;
+				margin-right:18px;
+				cursor:pointer;
+				overflow:hidden;
+				
+			}
+			#friend-link .brand-link .b-lin-list li:first-child{
+				margin-right:0px;
+			}
+			#friend-link .brand-link .b-lin-list li:last-child a{
+				display:block;
+				font:8px/14px 'sisum';
+				color:#ccc;
+				margin-top:-20px;
+				margin-left:60px;
+			}
+			#friend-link .brand-link .b-lin-list li img{
+				transition:0.3;
+		/* 	/////////////////////////////////////////////////////////////////////////////	 */
+			}
+			/* #friend-link .brand-link .b-lin-list li:hover img{
+				-webkit-transform:scale(1.23);
+				-moz-transform: scale(1.23);
+				-o-transform:scale(1.23);
+				transform:scale(1.23);
+			} */
+			#company-info{
+				height:175px;
+				background:url('images/foot-bg.png') repeat-X;
+			}
+			#company-info .c-container{
+				width:1200px;
+				margin:auto;
+				padding-top:44px;
+			}
+			#company-info .c-container .c-con-list{
+				text-align:center;
+			}
+			#company-info .c-container .c-con-list li{
+				display:inline-block;
+				margin-right:38px;
+				
+			}
+			#company-info .c-container .c-con-list li:last{
+				margin-right:0px;
+			}
+			#company-info .c-container .c-con-list li img{
+				float:left;
+				margin-right:5px;
+				margin-top:3px;
+			}
+			#company-info .c-container .c-con-list li a{
+				float:left;
+				color:#fff;
+				font:14px/20px 'Microsoft yahei';
+			}
+			#company-info .c-container .copyright p{
+				padding:0 15px;
+				font-size:12px;
+				line-height:20px;
+				color:#fff;
+			}
+			#company-info .c-container .copyright p:first-child{
+				float:left;
+			}
+			#company-info .c-container .copyright p:last-child{
+				float:right;
+			}
+		</style> 
+ </head>
+ <body>
+		<!-- 网页头部 -->
+		<div id="header" class="min-w">
+			<div class="container">
+				<!-- 头部顶部 -->
+				<div class="header_top">
+					<p class="tips">欢迎光临方远咖啡官方网站！</p>
+					<div class="log-wrap">
+						<img src="images/logo.png" alt="" />
+						<img src="images/china.jpg" alt="" />
+						<a class="right"href="javascript:;">中文</a>
+						<a href="javascript:;">English</a>
+					</div>
+					<img class="header_top_hot" src="images/tel.png" alt="" />
+				</div>
+				<!-- 导航 -->
+				<ul class="nav">
+					<li>
+						<a href="javascript:;">
+							<h3>网站首页</h3>
+							<span>Home</span>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<h3>公司简介</h3>
+							<span>Introduction</span>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<h3>产品中心</h3>
+							<span>Product</span>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<h3>服务中心</h3>
+							<span>Service</span>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<h3>会员中心</h3>
+							<span>Member</span>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<h3>新闻动态</h3>
+							<span>News</span>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<h3>联系我们</h3>
+							<span>Contact</span>
+						</a>
+					</li>
+				</ul>				
+			</div>
+		</div>
+		<!-- 网页主题 -->
+		<div id="main">
+			<!-- 轮播 -->
+			<div class="main-banner" id="main-box">
+				<ul id="main-banner">
+					<li >
+						<img src="images/banner1.png"  alt="" />
+					</li>
+					<li>
+						<img src="images/banner2.jpg"  alt="" />
+					</li>
+					<li>
+						<img src="images/banner3.jpg"  alt="" />
+					</li>
+				</ul>
+				<ol id="main-btn">
+					<li class="on"></li>
+					<li></li>
+					<li></li>
+				</ol>
+				<div id="main-tab">
+					<a class="prev" href="javascript:;"></a>
+					<a class="next"href="javascript:;"></a>
+				</div>
+				
+			</div>
+			<!-- 新闻 -->
+			<div id="news" class="clearfix">
+				<a href="javascript:;">
+					<img class="icon-member" src="images/member.png" alt="" />
+				</a>
+				<dl class="new-content">
+					<dt>
+						<h1>新闻动态<span>NEWS INFORMATION</span></h1>
+					</dt>
+					<dd class="clearfix">
+						<div class="new-timer">
+							<span>28日</span>
+							<span>一月</span>
+						</div>
+						<div class="new-right">
+							<h3>全能咖啡课程已经上线了哦</h3>
+							<p>专业的咖啡团队将与你一起探索咖啡世界的精彩之处，教你制作一杯好咖啡。</p>
+						</div>
+					</dd>
+					<dd class="clearfix">
+						<div class="new-timer">
+							<span>28日</span>
+							<span>一月</span>
+						</div>
+						<div class="new-right">
+							<h3>全能咖啡课程已经上线了哦</h3>
+							<p>专业的咖啡团队将与你一起探索咖啡世界的精彩之处，教你制作一杯好咖啡。</p>
+						</div>
+					</dd>
+					<dd class="clearfix">
+						<div class="new-timer">
+							<span>28日</span>
+							<span>一月</span>
+						</div>
+						<div class="new-right ">
+							<h3>全能咖啡课程已经上线了哦</h3>
+							<p>专业的咖啡团队将与你一起探索咖啡世界的精彩之处，教你制作一杯好咖啡。</p>
+						</div>
+					</dd>
+					<dd>
+						<a href="javascript:;">
+							<img src="images/coffe-cup.jpg" alt="" />
+							<span>更多动态</span>
+						</a>
+					</dd>
+				</dl>
+				<div class="coffee-banner clearfix">
+					<img width="657" src="images/hot-pic.jpg" alt="" />
+					<div class="news-banner" >
+						<div class="banner-pic">
+							<ul class="banner clearfix" >
+								<li><img src="images/duc-1.jpg" alt="" /></li>
+								<li><img src="images/duc-2.jpg" alt="" /></li>
+								<li><img src="images/duc-3.jpg" alt="" /></li>
+							</ul> 
+						</div>
+						
+					</div>
+				</div>
+			</div>
+			<!-- 侧边栏 -->
+			<ul id="sidBar">
+				<li>QQ</li>
+				<li>客服</li>
+				<li>客服</li>
+				<li>客服</li>
+				<li></li>
+			</ul>			
+		</div>
+		<!-- 公司简介 -->
+		<div id="introduction">
+			<div class="in-container">
+				<img class="in-con-pic" src="images/badges.png" alt="" />
+				<h1>公司简介<span>COMPANY PROFILE</span></h1>
+			
+				<div class="in-con-p">
+					<p>“咖啡”一词源自希腊语“Kaweh”，意思是“力量与热情”。咖啡树是属茜草科常绿小乔木，日常饮用的咖啡是用咖啡豆配合各种不同的烹煮<br />
+					器具制作出来的，而咖啡豆就是指咖啡树果实内之果仁，再用适当的烘焙方法烘焙而成。在世界各地，人们越来越爱喝咖啡。随之而来的“咖啡文<br />
+					化”充满生活的每个时刻。无论在家里、还是在办公室、或是各种社交场合，人们都在品着咖啡、它逐渐与时尚、现代生活联系在一起。<br />
+					充满生活的每个时刻。无论在家里、还是在办公室、或是各种社交场合，人们都在品着咖啡、它逐渐<br />
+					充满生活的每个时刻。无论在家里、还是在办公室..</p>
+					<span>
+						<img src="images/coffee-cup2.png" alt="" />
+						详细信息
+					</span>
+					<img class="maizi" src="images/maizi.png" alt="" />
+					<img class="coffee-1" src="images/coffee-1.png" alt="" />
+					<img class="coffee-2" src="images/coffee-2.png" alt="" />
+				</div>
+			</div>
+		</div>
+		<!-- 左右切换 -->
+		<div id="b-banner">
+			<div class="b-ban-con">
+				<h3><img src="images/duc-tit.png" alt="" /></h3>
+				<div id="b-wrap">
+					<div class="b-wrap-con">
+						<ul id="b-content">
+							<li>
+								<img src="images/duc-1.jpg" alt="" />
+								<p>手感面包</p>
+							</li>
+							<li>
+								<img src="images/duc-2.jpg" alt="" />
+								<p>手感面包</p>
+							</li>
+							<li>
+								<img src="images/duc-3.jpg" alt="" />
+								<p>手感面包</p>
+							</li>
+							<li>
+								<img src="images/duc-4.jpg" alt="" />
+								<p>手感面包</p>
+							</li>
+							<li>
+								<img src="images/duc-5.jpg" alt="" />
+								<p>手感面包</p>
+							</li>
+						</ul>
+					</div>
+					<div id="b-con-btn">
+						<a href="javascript:;"></a>
+						<a href="javascript:;"></a>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<!-- 网页底部 -->
+		<div id="footer">
+			<div id="friend-link" class="clearfix">
+				<div class="saoma">
+					<img src="images/logo.png" alt="" />
+					<ul>
+						<li>
+							<a href="javascript:;">
+								<img src="images/cup.png" alt="" />
+							</a>
+						</li>
+						<li>
+							<a href="javascript:;">扫一扫<br/>微信</a>
+						</li>
+						<li>
+							<a href="javascript:;">
+								<img src="images/eqcode.jpg" alt="" />
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="brand-link">
+					<h3>Friendly Link</h3>
+					<div class="b-lin-text">
+						友情链接
+					</div>
+					<ul class="b-lin-list">
+						<li><img src="images/link-icon4.png" alt="" /></li>
+						<li><img src="images/link-icon3.png" alt="" /></li>
+						<li><img src="images/link-icon2.png" alt="" /></li>
+						<li>
+						<img src="images/link-icon1.png" alt="" />
+						<a href="javascript:;">住一晚送一晚</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div id="company-info" >
+				<div class="c-container">
+					<ul class="c-con-list">
+						<li class="clearfix"> 
+							<img src="images/time.png" alt="" />
+							<a href="javascript:;">工作时间：周一至周六 早上8:30 -下午18:00</a>
+						</li>
+						<li class="clearfix">
+							<img src="images/call.png" alt="" />
+							<a href="javascript:;">业务电话：400-021-1234 / 021-1213-4567</a>
+						</li>
+						<li class="clearfix">
+							<img src="images/e.png" alt="" />
+							<a href="javascript:;"> 商务合作：18768838224@163.com</a>
+						</li>
+					</ul>
+					<ul class="c-con-list" style="margin:20px auto;">
+					  <li class="clearfix"> 
+							<img src="images/email.png" alt="" />
+							<a href="javascript:;">加入我们：www.wfyweb.com</a>
+						</li>
+						<li class="clearfix">
+							<img src="images/position.png" alt="" />
+							<a href="javascript:;"> 地址：河南省禹州市</a>
+						</li>
+						<li class="clearfix">
+							<img src="images/ka.png" alt="" />
+							<a href="javascript:;">  地跌：目前没有，支持地啵- -</a>
+						</li>
+					</ul>
+					<div class="copyright clearfix ">
+						<p>版权:Copyight @2017 huiyingwl.com All Rights reserved.</p>
+						<p>技术支持：禹州方远网络科技</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<!-- 淡入淡出轮播 -->
+		<script type="text/javascript">
+			var oBox = document.getElementById('main-box');
+			var aImg = document.getElementById('main-banner').getElementsByTagName('li');
+			var aInput = document.getElementById('main-btn').getElementsByTagName('li');
+			var aBtn = document.getElementById('main-tab').getElementsByTagName('a');
+			var n = 0;
+			var nowTime = 0;
+			var time = null;
+			aInput[n].className = 'on';
+			aImg[n].style.opacity = 1;
+			aImg[n].style.filter = 'alpha(opacity=100)';
+			for ( var i=0;i<aInput.length;i++ )
+			{	
+				aInput[i].index=i;
+				aInput[i].onclick = function(){
+					n=this.index;
+					Block();
+				};
+				
+			}
+			for (var i=0;i<aBtn.length;i++ )
+			{	
+				aBtn[i].index=i;
+				aBtn[i].onclick = function(){
+					if ( new Date()-nowTime>1000)
+					{
+						nowTime = new Date();
+						if (this.index)
+						{	
+							n++;
+							n%=aInput.length;
+						}else{
+							n--;
+							if (n<0)n=aInput.length-1;
+						}
+						Block();
+					}
+				};
+			}
+			function Block(){
+				for (var i=0;i<aInput.length;i++ )
+					{
+						aImg[i].style.opacity = 0;
+						aImg[i].style.filter = 'alpha(opacity=0)';
+						aInput[i].className = '';
+					}
+					aInput[n].className = 'on';
+					move( aImg[n],'opacity',100,2 );
+			};
+			
+			oBox.onmouseenter = function(){
+				clearInterval(time);
+			};
+			oBox.onmouseleave = function(){
+				auto();
+			};
+			auto();
+			function auto(){
+				time = setInterval(function(){
+					n++;
+					n%=aInput.length;
+					Block();	
+				},3000)
+			};
+
+			// 插件 move淡入淡出
+			function move( obj,attr,target,speed ){
+				clearInterval(obj.timer);
+				var n=0;
+				obj.timer=setInterval(function(){
+					if( attr =='opacity' ){
+						n = Math.round(css( obj,'opacity')*100);
+					}else{
+						n= parseInt(css( obj,attr ));
+					}
+					if ( n == target)
+					{
+						clearInterval(obj.timer);
+					}else{
+						if ( attr =='opacity' )
+						{
+							obj.style.opacity = ( n+speed )/100;
+							obj.style.filter = 'alpha(opacity='+(n+speed)+')';
+						}else{
+							obj.style[attr] = n+speed+'px';
+						}
+					}
+				},13);
+			};
+			
+			function css( obj,attr){
+				return obj.currentStyle? obj.currentStyle[attr]:getComputedStyle(obj)[attr];
+			};
+		</script>
+
+		<!-- 无缝滚动 -->
+		<script type="text/javascript">
+			window.onload = function(){
+				var oList = document.getElementById('b-content');
+				var oLast = document.getElementById('b-con-btn');
+				var oImg = oList.getElementsByTagName('li');
+				var oTab = oLast.getElementsByTagName('a');
+				var n = 3;
+				var timer = null;
+				oList.innerHTML += oList.innerHTML;
+				oList.style.width = oImg.length*15+oImg.length*oImg[0].offsetWidth+'px';
+
+				//点击左右按钮
+				for ( var i=0;i<oTab.length;i++ )
+				{	
+					oTab[i].index = i;
+					oTab[i].onclick = function(){
+						//n = this.index?3:-3;
+						if (this.index)
+						{
+							n=3;
+						}else{
+							n=-3;
+						}
+					};
+				}
+
+				oList.onmouseenter = function(){
+					clearInterval(timer);
+				};
+				oList.onmouseleave = function(){
+					auto();
+				};
+				auto();
+				function auto(){
+					timer = setInterval(function(){
+						if ( oList.offsetLeft>=0 )
+						{
+							oList.style.left = -oList.offsetWidth/2+'px';
+						}else if( oList.offsetLeft<=-oList.offsetWidth/2 ){
+							oList.style.left = 0;
+						}
+						oList.style.left = oList.offsetLeft+n+'px';
+					},30)
+				};
+			};
+		</script>
+ </body>
+</html>

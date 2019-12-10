@@ -1,0 +1,44 @@
+		#return{
+			position:fixed;
+			bottom:50px;
+			right:40px;
+			width:50px;
+			height:50px;
+			background:rgba(0,0,0,.5);
+			border-radius:5px;
+			text-align:center;
+			cursor:pointer;
+			opacity:0;
+			transition:.6s;
+		}
+		#return:hover{
+			background:#ccc;
+		}
+		#return:hover p{
+			display:block;
+		}  
+		#return:hover .re_bg{
+			display:none;
+		}
+		#return .re_bg{
+			width:50px;
+			height:50px;
+			background:url(../images/0.png) 10px 15px no-repeat;
+			
+		}
+		#return p{
+			position:absolute;
+			top:10px;
+			left:10px;
+			width:30px;
+			color:#000;
+			font:12px/16px 'Microsoft yahei';
+			display:none;
+			transition:.3s;
+			-webkit-touch-callout: none;
+			-webkit-user-select: none;
+			-khtml-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+		}

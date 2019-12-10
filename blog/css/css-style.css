@@ -1,0 +1,116 @@
+
+* {
+    margin:0;
+    padding:0;
+}
+body {
+    -webkit-touch-callout:none;
+    -webkit-user-select:none;
+    -khtml-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+    overflow:hidden;
+}
+a {
+    font-family:"HelveticaNeue-Medium","Helvetica Neue Medium","Helvetica Neue",Helvetica,Arial,sans-serif;
+    display:block;
+    text-decoration:none;
+    color:#fff;
+    cursor:url('../images/link.cur'),pointer;
+}
+#bodyPage {
+    width:100%;
+    min-height:100%;
+    height:auto !important;
+    height:100%;
+    position:fixed;
+    top:0;
+    left:0;
+}
+img.bg {
+    position:absolute;
+    top:0px;
+    left:0px;
+    z-index:1;
+    display:none;
+}
+#content {
+    display:block;
+    position:absolute;
+    width:100%;
+    left:0;
+    top:50%;
+    margin-top:-140px;
+    text-align:center;
+    color:#fff;
+}
+h1,h2 {
+    text-align:center;
+    line-height:1;
+    letter-spacing:-5px;
+    font-size:180px;
+    font-weight:lighter;
+}
+#content .greeting {
+    opacity:0;
+    width:100%;
+    -webkit-animation:Move .4s ease-out 1.4s forwards;
+    -moz-animation:Move .4s ease-out 1.4s forwards;
+    -ms-animation:Move .4s ease-out 1.4s forwards;
+    -o-animation:Move .4s ease-out 1.4s forwards;
+    animation:Move .4s ease-out 1.4s forwards;
+}
+#content .greeting h2 {
+    margin-top:20px;
+    font-size:54px;
+    letter-spacing:0px;
+    white-space:nowrap;
+}
+#content .below {
+    width:100%;
+    opacity:0;
+    -webkit-animation:Move .4s ease-out 2s forwards;
+    -moz-animation:Move .4s ease-out 2s forwards;
+    -ms-animation:Move .4s ease-out 2s forwards;
+    -o-animation:Move .4s ease-out 2s forwards;
+    animation:Move .4s ease-out 2s forwards;
+}
+#content .below h2 {
+    margin-top:200px;
+    font-size:24px;
+    letter-spacing:0px;
+    white-space:nowrap;
+    transition:.6s;
+}
+#content .below h2:hover {
+    transform:translateY(-15px);
+}
+#content .time {
+    opacity:0;
+    -webkit-animation:Move .8s ease-out 1s forwards;
+    -moz-animation:Move .8s ease-out 1s forwards;
+    -ms-animation:Move .8s ease-out 1s forwards;
+    -o-animation:Move .8s ease-out 1s forwards;
+    animation:Move .8s ease-out 1s forwards;
+}
+@-webkit-keyframes Move{
+    0%{ opacity:0;transform: translateY(40px);}
+    100%{opacity:1;transform: translateY(0px);}
+}
+@-moz-keyframes Move{
+    0%{ opacity:0;transform: translateY(40px);}
+    100%{opacity:1;transform: translateY(0px);}
+}
+@-ms-keyframes Move{
+    0%{ opacity:0;transform: translateY(40px);}
+    100%{opacity:1;transform: translateY(0px);}
+}
+@-o-keyframes Move{
+    0%{ opacity:0;transform: translateY(40px);}
+    100%{opacity:1;transform: translateY(0px);}
+}
+@keyframes Move{
+    0%{ opacity:0;transform: translateY(40px);}
+    100%{opacity:1;transform: translateY(0px);}
+}

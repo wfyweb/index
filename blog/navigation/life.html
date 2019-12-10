@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en" onselectstart="return false">
+<head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Handsome</title>
+  	<link rel="icon" href="../images/handsome1.ico" type="image/x-cio" />
+	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="../css/css-head.css" />
+	<link rel="stylesheet" href="css/font.css" type='text/css'/>
+	<link rel="stylesheet" href="../css/css-return.css" />
+	<link rel="stylesheet" href="css/life.css" />
+</head>
+<body style="background:#fff;">
+	<!-- 头部 -->
+	<div id="head">
+		<ul class="head_list clearfix bs items" id="head_list">
+			<li>
+				<a href="../home.html">
+					<span data-hover="首页">首页</span>
+				</a>
+			</li>
+			<li>
+				<a href="book.html">
+					<span data-hover="笔记">笔记</span>
+				</a>
+			</li>
+			<li class="alist">
+				<a href="#">
+					<span data-hover="生活">生活</span>
+				</a>
+			</li>
+			<li>
+				<a href="domearr.html">
+					<span data-hover="项目">项目</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<span data-hover="留言版">留言版</span>
+				</a>
+			</li>
+			<li >
+				<a href="bloger.html">
+					<span data-hover="关于博主">关于博主</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+	<section id="min">
+		<div class="min-con">
+			<div class="min-inner">
+				<section id="posts">
+					<ul>
+						<li>
+							<span class="archive-on"></span>
+							<span class="archive-page">记录生活中的点滴！</span>
+						</li>
+						<li style="margin-bottom:45px;">
+							<span class="archive-page">2017</span>
+						</li>
+						<li>
+							<div class="archiv-title">
+								<a href="../article/youth.html">
+									<span class="archiv-time">01-10</span>
+									<span class="archive-meta">
+										你以为你在合群，其实你在浪费青春
+									</span>
+								</a>
+							</div>
+
+						</li>
+						<li>
+							<div class="archiv-title">
+								<a href="../article/youth.html">
+									<span class="archiv-time">01-10</span>
+									<span class="archive-meta">
+										你以为你在合群，其实你在浪费青春
+									</span>
+								</a>
+							</div>
+
+						</li>
+						<li>
+							<div class="archiv-title">
+								<a href="../article/youth.html">
+									<span class="archiv-time">01-10</span>
+									<span class="archive-meta">
+										你以为你在合群，其实你在浪费青春
+									</span>
+								</a>
+							</div>
+
+						</li>
+						<li>
+							<div class="archiv-title">
+								<a href="http://wfyweb.com/invitation/">
+									<span class="archiv-time">01-10</span>
+									<span class="archive-meta">
+										微请柬<span style="color: #999;font-size: 14px">（一定手机打开哦！）</span>
+									</span>
+								</a>
+							</div>
+
+						</li>
+						<li>
+							<div class="archiv-title">
+								<a href="http://www.wfyweb.com/love/">
+									<span class="archiv-time">01-10</span>
+									<span class="archive-meta">
+										她
+									</span>
+								</a>
+							</div>
+
+						</li>
+
+					</ul>
+				</section>
+				<nav></nav>
+			</div>
+		</div>
+	</section>
+	<section id="foot">
+			<p>
+				Copyright © 2017  wfyweb.com | 豫ICP备16041179号 | Powered by <a href="javascript:;">Handsome</a>
+			</p>
+	</section>
+	<div id="return">
+		<div class="re_bg"></div>
+		<p>返回顶部</p>
+	</div>
+	<!-- 导航 -->
+	<script type="text/javascript">
+		var aUl = document.getElementById("head_list");
+		var A = aUl.getElementsByTagName('li');
+		for (var i=0;i<A.length;i++ )
+		{
+			A[i].onclick = function(){
+				for (var i=0;i<A.length;i++ ){
+					A[i].className='';
+				}
+				this.className='alist';
+			}
+		}
+	</script>
+	<!-- 返回顶部 -->
+	<script type="text/javascript" src="../js/return.js"></script>
+</body>
+</html>

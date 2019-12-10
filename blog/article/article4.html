@@ -1,0 +1,274 @@
+<!doctype html>
+<!--
+
+  .--,       .--,
+ ( (  \.---./  ) )
+  '.__/o   o\__.'
+     {=    =}
+      >  -  <
+     /       \
+    //       \\
+   //|   .   |\\
+   "'\       /'"_.-~`'-.
+      \  _  /--'
+    ___)( )(___
+   (((__) (__)))
+
+   the valiant knights of programming who toil away.
+
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>如何减少JS的全局变量污染</title>
+  	<link rel="icon" href="../images/handsome1.ico" type="image/x-cio" />
+	<link rel="stylesheet" href="../font/iconfont.css" type="text/css"/>
+	<link rel="stylesheet" href="../css/css-head.css" />
+	<link rel="stylesheet" href="../css/css-return.css" />
+	<link rel="stylesheet" href="css/css-model.css" />
+	<link rel="stylesheet" href="css/css-text.css" />
+	<link rel="stylesheet" href="https://at.alicdn.com/t/font_uymnxyb0kuw3766r.css" />
+	<style type="text/css">
+		#con .text section	.bl1{height:195px;background:url('img/bl1.png');background-size:100% 100%;}
+		#con .text section .bl2{height:195px;background:url('img/bl2.png');background-size:100% 100%;}
+		#con .text section .bl3{height:104px;background:url('img/bl3.png');background-size:100% 100%;}
+		#con .text section .bl4{height:123px;background:url('img/bl4.png');background-size:100% 100%;}
+		#con .text section .bl5{height:157px;background:url('img/bl5.png');background-size:100% 100%;}
+		#con .text section .bl6{height:391px;background:url('img/bl6.png');background-size:100% 100%;}
+		#con .text section .bl7{height:573px;background:url('img/bl7.png');background-size:100% 100%;}
+		#con .text section .bl8{height:164px;background:url('img/bl8.png');background-size:100% 100%;}
+		#con .text section .bl9{height:141px;background:url('img/bl9.png');background-size:100% 100%;}
+		#con .text section .bl10{height:122px;background:url('img/bl10.png');background-size:100% 100%;}
+		#con .text section .bl11{height:140px;background:url('img/bl11.png');background-size:100% 100%;}
+		#con .text section .bl12{height:119px;background:url('img/bl12.png');background-size:100% 100%;}
+	</style>
+</head>
+<body>
+
+	<!-- 头部 -->
+	<div id="head">
+		<ul class="head_list clearfix bs items" id="head_list">
+			<li class="alist" >
+				<a href="../home.html">
+					<span data-hover="首页">首页</span>
+				</a>
+			</li>
+			<li>
+				<a href="../navigation/book.html">
+					<span data-hover="笔记">笔记</span>
+				</a>
+			</li>
+			<li>
+				<a href="../navigation/life.html">
+					<span data-hover="生活">生活</span>
+				</a>
+			</li>
+			<li>
+				<a href="../navigation/domearr.html">
+					<span data-hover="项目">项目</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<span data-hover="留言版">留言版</span>
+				</a>
+			</li>
+			<li>
+				<a href="../navigation/bloger.html">
+					<span data-hover="关于博主">关于博主</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+	<!-- 身体 -->
+	<section id="min">
+
+		<!-- 文章列表 -->
+		<div id="content">
+			<div class="con-wrap clearfix">
+				<div class="con-theme fl bs">
+					<div class="con" id="con">
+						<h1>如何减少JS的全局变量污染</h1>
+						<div class="con-line"></div>
+						<div class="con-des">
+							<i class="iconfont icon-rili" style="margin-right:-2px;"></i><span>2017,2,18</span>
+							<i class="iconfont icon-biaoqian"style="margin-right:5px;"></i><span>javascript</span>
+							<i class="iconfont icon-dianjishou" style="margin-top:-2px;"></i>
+							<script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+							<span id="busuanzi_value_page_pv" style="margin-right:4px;"></span><span>Hits</span>
+						</div>
+						<div class="text">
+							<h2 class="herader">一、尽量少用全局对象</h2>
+							<section style="padding-top:0;">
+								<p>javaScript 可以随意定义保存所有应用资源的全局变量。但全局变量可以削弱程序灵活性，增大了模块之间的耦合性。
+								全局变量的问题在于，你的JavaScript应用程序和web页面上的所有代码都共享了这些全局变量，他们住在同一个全局命名空间，所以当程序的两个不同部分定义同名但不同作用的全局变量的时候，命名冲突在所难免。
+								</p>
+								<p>web页面包含不是该页面开发者所写的代码也是比较常见的，例如：</p>
+								<ul>
+									<li>第三方的JavaScript库</li>
+									<li>广告方的脚本代码</li>
+									<li>第三方用户跟踪和分析脚本代码</li>
+									<li>不同类型的小组件，标志和按钮</li>
+								</ul>
+								<p>
+								比方说，该第三方脚本定义了一个全局变量，叫做result；接着，在你的函数中也定义一个名为result的全局变量。其结果就是后面的变量覆盖前面的，第三方脚本就一下子嗝屁啦！
+								</p>
+								<p>
+								因为，你不小心，在代码的某一处修改了全局变量， 会导致依赖全局变量的其它模块出错。而且出错原因难调试，难找到。再者就是，网页运行肯定用到window对象，浏览器引擎又要遍历一次window的属性，性能下降。
+								</p>
+								<p>
+									全局变量是维系不同模块之间的纽带，模块之间只能通过全局变量来访问对方提供的功能能使用局部变量的时候，绝不要使用全局变量
+								</p>
+
+								<div class="bl bl1"></div>
+								<p>
+									保持这些变量为局部变量，仅将其作为需要使用它们的代码的一部分。
+								</p>
+								<div class="bl bl2"></div>
+								<p>
+									在browser中，this关键字会指向全局的window对象JavaScript 的全局命名空间也被暴露为在程序全局作用域中可以访问的全局对象，该对象作为 this 关键字的初始值。在 Web 浏览器中，全局对象被绑定到全局的 window 变量。添加或修改全局变量会自动更新全局对象。
+								</p>
+								<div class="bl bl3"></div>
+								<p>
+									类似地，更新全局对象也会自动地更新全局命名空间：
+								</p>
+								<div class="bl bl4"></div>
+								<p>两种用来改变全局对象的方式，通过var关键字声明以及给全局对象设置属性(通过this关键字)</p>
+								<p>通过全局对象进行针对当前运行环境的特性检测(Feature Detection)，比如在ES5中提供了一个JSON对象用来操作JSON数据，那么可以通过if(this.JSON)来判断当前运行环境是否支持JSON</p>
+								<div class="bl bl5"></div>
+							</section>
+							<h2 class="herader">二、如何避免全局变量</h2>
+							<section>
+								<p>方法一：只创建一个全局变量。</p>
+								<div class="bl bl6"></div>
+								<p>方法二：使用模块模式</p>
+								<div class="bl bl7"></div>
+								<p>所谓模块模式，就是创建一个函数，该函数包括，私有变量和一个特权对象，特权对象的内容是，利用闭包能访问到私有变量的函数，最后返回特权对象。</p>
+								<p>首先，方法二，不仅可以当作全局变量用，也可以用在局部声明全局变量。因为就算你在不知道某个地方修改了seqer，就会立即报错，因为这是个对象，不是字符串。</p>
+
+								<p>方法三：零全局变量</p>
+								<p>
+									零全局变量实际上是为了适应一小段封闭代码而采取的一种局部变量处理方式，只适合在一些特殊场景中使用。最常见的就是一些不会被其他脚本访问到的完全独立的脚本。 使用零全局变量的方式需要采用立即执行函数，用法如下。
+								</p>
+								<div class="bl bl8"></div>
+							</section>
+							<h2 class="herader">三、意外的全局变量</h2>
+							<section>
+								<p>
+									由于JavaScript的两个特征，不自觉地创建出全局变量是出乎意料的容易。首先，你可以甚至不需要声明就可以使用变量；第二，JavaScript有隐含的全局概念，意味着你不声明的任何变量都会成为一个全局对象属性。参考下面的代码：
+								</p>
+								<div class="bl bl9"></div>
+								<p>
+									此段代码中的result没有声明。代码照样运作正常，但在调用函数后你最后的结果就多一个全局命名空间，这可以是一个问题的根源。
+								</p>
+								<p>
+									经验法则是始终使用var声明变量，正如改进版的sum()函数所演示的：
+								</p>
+								<div class="bl bl10"></div>
+								<p>
+									另一个创建隐式全局变量的反例就是使用任务链进行部分var声明。下面的片段中，a是本地变量但是b确实全局变量，这可能不是你希望发生的：
+								</p>
+								<div class="bl bl11"></div>
+								<p>
+									此现象发生的原因在于这个从右到左的赋值，首先，是赋值表达式b = 0，此情况下b是未声明的。这个表达式的返回值是0，然后这个0就分配给了通过var定义的这个局部变量a。换句话说，就好比你输入了：
+								</p>
+								<p>
+									var a = (b = 0); <br />如果你已经准备好声明变量，使用链分配是比较好的做法，不会产生任何意料之外的全局变量，如：
+								</p>
+								<div class="bl bl12"></div>
+								<p>
+									然而，另外一个避免全局变量的原因是可移植性。如果你想你的代码在不同的环境下（主机下）运行，使用全局变量如履薄冰，因为你会无意中覆盖你最初环境下不存在的主机对象
+								</p>
+								<p>
+									总是记得通过var关键字来声明局部变量。使用lint工具来确保没有隐式声明的全局变量。
+								</p>
+								<p style="padding-top:80px;float:right;font-size:12px;color:#999;">注：本文转自网络，仅学习交流。</p>
+							</section>
+						</div>
+					</div>
+					<!--PC版-->
+					<div id="SOHUCS" sid="article4"></div>
+				</div>
+				<div class="con-column fr ">
+					<ul class="col-list">
+						<li>
+							<div class="col-wrap bs">
+								<h3 class="col-wrap-title">
+									<i class="iconfont icon-tuijian"></i>
+									热门推荐
+								</h3>
+								<div class="wrap-popular bs">
+									<a href="article5.html"><i>1</i>移动端事件及点透问题</a>
+									<a href="article4.html"><i>2</i>如何减少JS的全局变量污染</a>
+									<a href="article3.html"><i>3</i>函数内部对象 arguments</a>
+									<a href="article2.html"><i class="ico">4</i>盒子模型及常见的问题</a>
+									<a href="article1.html"><i class="ico">5</i>html5的新增标签</a>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="col-wrap bs">
+								<h3 class="col-wrap-title">
+									<i class="iconfont icon-wenzhang"></i>
+									最近文章
+								</h3>
+								<div class="wrap-latest wrap-popular">
+									<a href="../404/erroe.html">html5的新增标签</a>
+									<a href="../404/erroe.html">html5的新增标签</a>
+									<a href="../404/erroe.html">html5的新增标签</a>
+									<a href="../404/erroe.html">html5的新增标签</a>
+									<a href="../404/erroe.html">html5的新增标签</a>
+									<a href="../404/erroe.html">html5的新增标签</a>
+									<a href="../404/erroe.html">html5的新增标签</a>
+									<a href="../404/erroe.html">html5的新增标签</a>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="col-wrap bs">
+								<h3 class="col-wrap-title">
+									<i style="padding-left:3px;font-size:24px;"class="iconfont icon-rili"></i>
+									日历
+								</h3>
+								<div id="tb"></div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- 底部 -->
+	<div id="foot">
+		<span>
+			Copyright © 2017  wfyweb.com | 豫ICP备16041179号 | Powered by <a href="javascript:;">Handsome</a>
+		</span>
+	</div>
+	<div id="return">
+		<div class="re_bg"></div>
+		<p>返回顶部</p>
+	</div>
+
+	<!-- 导航 -->
+	<script type="text/javascript" src="../js/daohang.js"></script>
+	<!-- 日历 -->
+	<script type="text/javascript" src="../js/rili.js"></script>
+	<script type="text/javascript">
+		var tb = document.getElementById('tb');
+		calendar();
+	</script>
+	<!-- 返回顶部 -->
+	<script type="text/javascript" src="../js/return.js"></script>
+	<script charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/changyan.js" ></script>
+	<script type="text/javascript">
+	window.changyan.api.config({
+	appid: 'cyt2iVNgp',
+	conf: 'prod_0f07b946489cdfe174fd8b1a7ecf74aa'
+	});
+	</script>
+</body>
+</html>

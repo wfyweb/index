@@ -1,0 +1,166 @@
+
+<!doctype html>
+<!--
+
+  .--,       .--,
+ ( (  \.---./  ) )
+  '.__/o   o\__.'
+     {=    =}
+      >  -  <
+     /       \
+    //       \
+   //|   .   |\
+   "'\       /'"_.-~`'-.
+      \  _  /--'
+    ___)( )(___
+   (((__) (__)))
+
+   the valiant knights of programming who toil away.
+
+-->
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Handsome</title>
+  <style type="text/css">
+    *{
+      margin:0;
+      padding:0;
+    }
+    body{background:#222;-webkit-user-select:none;}
+    .box{width: 660px;height: 420px;margin:100px auto;position:relative;box-shadow:0 0 2px #474747;}
+    .box .con{width:200px;height: 120px;border-radius: 10px;padding: 10px;position: absolute;cursor: pointer;    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;}
+    .con img{width:200px;height: 120px;border-radius: 10px;box-shadow: 0 2px 2px #222;}
+    .con.on{z-index: 999;opacity:0.8;}
+  </style>
+  <script src="http://cdn.bootcss.com/jquery/1.12.3/jquery.min.js"></script>
+</head>
+<body>
+    <div class="box" id="box">
+       <div class="con"><img src="img/1.png" alt=""></div>
+       <div class="con"><img src="img/2.png" alt=""></div>
+       <div class="con"><img src="img/3.png" alt=""></div>
+       <div class="con"><img src="img/4.png" alt=""></div>
+       <div class="con"><img src="img/5.png" alt=""></div>
+       <div class="con"><img src="img/6.png" alt=""></div>
+       <div class="con"><img src="img/7.png" alt=""></div>
+       <div class="con"><img src="img/8.png" alt=""></div>
+       <div class="con"><img src="img/9.png" alt=""></div>
+    </div>
+  <script type="text/javascript">
+    var $con = $('.con');
+    var w = $con.outerWidth(true);
+    var h = $con.outerHeight(true);
+    var length = $con.length;
+    var arr = [];
+    for(var i=0;i<length;i++){arr.push(i)};
+
+    //初始化布局
+    (function(){
+      $con.each(function(i){
+          this.top = parseInt( i/3 )*h;
+          this.left = parseInt( i%3 )*w;
+          $(this).css({
+            top:this.top+'px',
+            left:this.left+'px'
+          });
+      });
+    })();
+    //拖拽三部曲 1.鼠标按下
+    $con.mousedown(function(e){
+      var e = e || window.event;
+      var eX = e.pageX;
+      var eY = e.pageY;
+      var This = this;
+      // 拖拽对象 的 left top 值
+      var sL = $(this).position().left;
+      var sT = $(this).position().top;
+      $(this).addClass('on');
+
+      //保存拖拽对象的下标
+      var moveIndex = 0;
+      for( var i=0;i<arr.length;i++){
+        if( $con.eq(arr[i])[0]==$(this)[0]){
+          moveIndex = i;
+        }
+      };
+
+      //拖拽三部曲 2.鼠标移动
+      $(document).mousemove(function(e){
+        var nX = e.pageX;
+        var nY = e.pageY;
+
+         //保存拖拽对象的 top left 值
+        var top = sT+(nY-eY);
+        var left = sL+(nX-eX);
+        $(This).css({
+          top:top+'px',
+          left:left+'px'
+        });
+
+        //保存拖拽对象的 上/下/左/右 边框值
+        var ThisT = top;
+        var ThisB = top+h;
+        var ThisL = left;
+        var ThisR = left+w;
+        //碰撞检测，遍历数组获取所有碰撞对象 的中心
+        for( var i=0;i<arr.length;i++){
+          var $obj = $con.eq(arr[i]);
+          if($obj[0]!=$(This)[0]){
+            var mL = $obj[0].left+w/2;
+            var mT = $obj[0].top+h/2;
+            //console.log(mL,mT);
+            if( (ThisB>mT&&ThisT<mT)&&(ThisL<mL&&ThisR>mL) ){
+              var x = arr[moveIndex];
+              var l = $obj[0].left;
+              var t = $obj[0].top;
+
+              if(moveIndex<i){
+                for(var j=i-1;j>=moveIndex;j--){
+                  $con.eq(arr[j+1])[0].top = $con.eq(arr[j])[0].top;
+                  $con.eq(arr[j+1])[0].left = $con.eq(arr[j])[0].left;
+                  moveCon($con.eq(arr[j+1]));
+                }
+              }else{
+                for(var j=i;j<moveIndex;j++){
+                  $con.eq(arr[j])[0].top = $con.eq(arr[j+1])[0].top;
+                  $con.eq(arr[j])[0].left = $con.eq(arr[j+1])[0].left;
+                  moveCon($con.eq(arr[j]));
+                }
+              }
+
+              arr.splice(moveIndex,1);
+              arr.splice(i,0,x);
+              console.log(arr);
+              $(This)[0].top = t;
+              $(This)[0].left = l;
+              moveIndex = i;
+            }
+          }
+        }
+      }).mouseup(function(){
+
+        $(This).stop().animate({
+          top:$(This)[0].top+'px',
+          left:$(This)[0].left+'px'
+        }).removeClass('on');
+        $(this).off('mousemove');
+        $(this).off('mouseup');
+      });
+    }).find('img').mousedown(function(e){
+      e.preventDefault();
+    });
+    function moveCon($obj){
+      var nL = $obj[0].left+'px';
+      var nT = $obj[0].top+'px';
+      $obj.stop().animate({
+        left:nL,
+        top:nT
+      })
+    }
+  </script>
+</body>
+</html>

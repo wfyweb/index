@@ -1,0 +1,105 @@
+<!doctype html>
+<!--
+
+  .--,       .--,
+ ( (  \.---./  ) )
+  '.__/o   o\__.'
+     {=  ^  =}
+      >  -  <
+     /       \
+    //       \\
+   //|   .   |\\
+   "'\       /'"_.-~^`'-.
+      \  _  /--'
+    ___)( )(___
+   (((__) (__)))
+
+   the valiant knights of programming who toil away.
+
+-->
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <link rel="stylesheet" href="http://at.alicdn.com/t/font_66oizcp5ftwng66r.css">
+  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="css/css-style.css" type="text/css">
+  <script src="http://cdn.bootcss.com/jquery/1.12.3/jquery.min.js"></script>
+  <script src="http://m.people.cn/img/WIRELESS/2017/07/263/js/jweixin-1.0.0.js"></script>
+  <script>
+     var wxData = {
+            "imgUrl": 'http://wfyweb.com/laozhang/images/3.png',
+            "link": 'http://wfyweb.com/laozhang/index.html',
+            "desc": '所有美好的事情都值得等待。致青春，致老张。',
+            "title": "老张，你就这么走了"
+        };
+ </script>
+ <script src="http://m.people.cn/img/WIRELESS/2017/07/263/js/jweixin.js"></script>
+  <title>老张，你就这么走了</title>
+ </head>
+ <body>
+    <div id="page-pic">
+      <div  id="writ" class="writ">
+      <div id="writing" class="writing">
+        <!-- <div class="">再见！</div> -->
+      </div>
+      <div id="spare" class="spare" style="display:none">
+        <h3>老张，你就这么走了</h3>
+        <p>我的生命里有几个老张。</p>
+        <p>随着时间推进，不像以前促膝长谈。</p>
+        <p>渐渐的少了联系。</p>
+        <p>或许，他们都在奔波。</p>
+        <p>但一直在路上，在属于他们的位置。</p>
+        <p>为了他们的家，为了他们的梦。</p>
+        <p>相信总有一天我们能把酒言欢。</p>
+        <p>那时，笑说多年来无泪的伤口。</p>
+        <p>老张，还好明天就能重逢。</p>
+        <p>可能你又要这么走了，这么匆忙。</p>
+        <p>又这么欣喜，期待最终的聚首。</p>
+        <p>所有美好的事情都值得等待。</p>
+        <p>再聚首，老张会变为最真的老张。</p>
+        <p style="margin-top:10px;"></p>
+        <p class="last-p">致青春，致老张。</p>
+      </div>
+    <!-- 文章 -->
+    <script type="text/javascript">
+      var oWriting = document.getElementById('writing');
+      var oSpare = document.getElementById('spare').innerHTML;
+      var i=0;
+      var timer;
+      setTimeout( function(){
+        timer = setInterval(play,80);
+      },800);
+      function play(){
+        oWriting.innerHTML = oSpare.substring(0,i);
+          if ( i >  oSpare.length ){
+            clearInterval(timer);
+          }
+          i++;
+      };
+    </script>
+    </div>
+    </div>
+    <div id="music">
+        <audio  id="music-audio" class="audio" autoplay="autopaly">
+          <source src="music/bg-music.mp3" type="audio/mp3" />
+        </audio>
+        <div class="music-Bg music-spread">
+            <div class="music-bg music-bg-auto"></div>
+        </div>
+    </div>
+    <!-- <div class="next">
+        <div class="next-pic iconfont icon-xiayiye"></div>
+    </div>
+    <div class="good">
+        <p class="first-p"> Good</p>
+        <p class="last-p">bye !</p>
+    </div> -->
+    <script type="text/javascript" src="js/fn.js"></script>
+ </body>
+</html>

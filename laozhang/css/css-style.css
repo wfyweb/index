@@ -1,0 +1,93 @@
+            *{
+              padding: 0;
+              margin:0;
+            }
+            body,html{
+              width: 100%;
+              height: 100%;
+              margin:0;
+              padding:0;
+              overflow: hidden;
+              background:url('../images/1.jpg');
+              background-size: 100% 100%;
+            }
+            #page-pic{
+              list-style: none;
+              width: 100%;
+              height: 100%;
+              max-width: 768px;
+              margin:auto;
+              transition:1s;
+              transform: translateY(0%);
+            }
+            #writing{
+              width: 80%;
+              margin:40px auto 0;
+              text-align: center;
+            }
+            #writing h3{
+              font:bold 26px/32px "Micosoft Yahei";
+              margin-bottom: 20px;
+              color: #68370f;
+            }
+            #writing p{
+              font: 16px/30px "Micosoft Yahei";
+              text-shadow: 1px 1px 2px #000;
+              color: #fff;
+            }
+            #writing .last-p{
+              text-align: right;
+            }
+            #music .music-Bg{
+              position: fixed;
+              top:20px;
+              right:0px;
+              width: 58px;
+              height:58px;
+            }
+             #music .music-Bg.music-spread{
+              background:url('../images/music_c0fda01.gif') no-repeat center center;
+              background-size:58px 58px;
+            }
+
+             #music .music-Bg .music-bg{
+              position: absolute;
+              width: 35px;
+              height:35px;
+              top:15px;
+              right:15px;
+              background:url('../images/music_off_8d94020.png');
+              background-size:100% 100%;
+              z-index:-1;
+             }
+              #music .music-Bg .music-bg.music-bg-auto{
+                -webkit-animation: musAuto 4s linear infinite;
+                -moz-animation: musAuto 4s linear infinite;
+                -ms-animation: musAuto 4s linear infinite;
+                -o-animation: musAuto 4s linear infinite;
+                animation: musAuto 4s linear infinite;
+              }
+              @-webkit-keyframes musAuto{
+                0%{transform: rotate(0deg)}
+                100%{transform: rotate(360deg)}
+              }
+              @-moz-keyframes musAuto{
+                0%{transform: rotate(0deg)}
+                100%{transform: rotate(360deg)}
+              }
+              @-mz-keyframes musAuto{
+                0%{transform: rotate(0deg)}
+                100%{transform: rotate(360deg)}
+              }
+              @-o-keyframes musAuto{
+                0%{transform: rotate(0deg)}
+                100%{transform: rotate(360deg)}
+              }
+              @keyframes musAuto{
+                0%{transform: rotate(0deg)}
+                100%{transform: rotate(360deg)}
+              }
+
+
+
+

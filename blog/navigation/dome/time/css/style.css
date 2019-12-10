@@ -1,0 +1,17 @@
+/*style css*/
+
+body,div,p,span,a,ul,h2,li,nav,article,section,input,button,label{margin: 0;padding: 0;}
+body{background:#000000 no-repeat;width:100%;height:100%;overflow: hidden;}
+li{list-style: none;}
+.rou{border-radius:50%;position:absolute;top:50%;left:50%;}
+#wrap{width:345px;height:345px;margin-left:-172px;margin-top: -200px;background:linear-gradient(#777777, #2f2f2f);}
+#wrap .rou1{width:320px;height:320px;margin-left:-160px;margin-top:-160px;background:linear-gradient(#252525, #010101);}
+#wrap .rou1 .rou2{width:280px;height:280px;margin-left:-140px;margin-top:-140px;background:rgba(255,255,255,.0);}
+#wrap .rou1 .rou2 ul li{width:4px;height:4px;background:#303030;border-radius:50%;position: absolute;left:50%;margin:0 -3px;transform-origin:center 140px;transition:all 1s}
+#wrap .rou1 .rou2 ul li.max{width:5px;height:5px;transform-origin:center 140.5px;background:#5c5c5c;}
+#wrap .rou1 .rou2 ul li.no{background:#df0333;}
+#hub{width:10px;height:10px;background:#9a9a9a;margin-left:-5px;margin-top: -5px;}
+#hub div{position:absolute;top:50%;left:50%;}
+#hub .time{width:9px;height:80px;background:#df0333;margin-top:-80px;margin-left:-4.5px;border-radius:4.5px 4.5px 0 0;transform-origin:center bottom;transition:all 0.3s}
+#hub .minute{width:3px;height:110px;background:#b1b1b1;margin-top:-110px;margin-left:-1.5px;border-radius:1.5px 1.5px 0 0;transform-origin: center bottom;transition:all 0.3s}
+#hub .center{width:10px;height:10px;background:#9a999e;margin-left:-9px;margin-top: -9px;border:4px solid #131313;}

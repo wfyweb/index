@@ -1,0 +1,275 @@
+<!doctype html>
+<!--
+
+  .--,       .--,
+ ( (  \.---./  ) )
+  '.__/o   o\__.'
+     {=    =}
+      >  -  <
+     /       \
+    //       \\
+   //|   .   |\\
+   "'\       /'"_.-~`'-.
+      \  _  /--'
+    ___)( )(___
+   (((__) (__)))
+
+   the valiant knights of programming who toil away.
+
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>盒子模型及常见的问题</title>
+  	<link rel="icon" href="../images/handsome1.ico" type="image/x-cio" />
+	<link rel="stylesheet" href="../font/iconfont.css" type="text/css"/>
+	<link rel="stylesheet" href="../css/css-head.css" />
+	<link rel="stylesheet" href="../css/css-return.css" />
+	<link rel="stylesheet" href="css/css-model.css" />
+	<link rel="stylesheet" href="css/css-text.css" />
+	<link rel="stylesheet" href="https://at.alicdn.com/t/font_uymnxyb0kuw3766r.css" />
+</head>
+<body>
+
+	<!-- 头部 -->
+	<div id="head">
+		<ul class="head_list clearfix bs items" id="head_list">
+			<li class="alist" >
+				<a href="../home.html">
+					<span data-hover="首页">首页</span>
+				</a>
+			</li>
+			<li>
+				<a href="../navigation/book.html">
+					<span data-hover="笔记">笔记</span>
+				</a>
+			</li>
+			<li>
+				<a href="../navigation/life.html">
+					<span data-hover="生活">生活</span>
+				</a>
+			</li>
+			<li>
+				<a href="../navigation/domearr.html">
+					<span data-hover="项目">项目</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<span data-hover="留言版">留言版</span>
+				</a>
+			</li>
+			<li>
+				<a href="../navigation/bloger.html">
+					<span data-hover="关于博主">关于博主</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+	<!-- 身体 -->
+	<section id="min">
+
+		<!-- 文章列表 -->
+		<div id="content">
+			<div class="con-wrap clearfix">
+				<div class="con-theme fl bs">
+					<div class="con" id="con">
+						<h1>盒子模型及常见的问题</h1>
+						<div class="con-line"></div>
+						<div class="con-des">
+							<i class="iconfont icon-rili" style="margin-right:-2px;"></i><span>2017,1,14</span>
+							<i class="iconfont icon-biaoqian"style="margin-right:5px;"></i><span>css</span>
+							<i class="iconfont icon-dianjishou" style="margin-top:-2px;"></i>
+							<script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+							<span id="busuanzi_value_page_pv" style="margin-right:4px;"></span><span>Hits</span>
+						</div>
+						<div class="text" >
+							<p class="indent">盒子模型概念是初学者要学习而且搞明白的知识点，不然在开发过程中会遇到各种的bug，出现各种问题。理解了这个重要的概念才能更好的排版，进行页面布局。因为自己就在填坑，今天就温习一下盒子模型，面试中也会经常问到。</p>
+							<section>
+								<h2 class="herader">一、css盒子模型概念</h2>
+								<p>CSS css盒子模型 又称框模型 (Box Model) ，包含了元素内容（content）、内边距（padding）、边框（border）、外边距（margin）几个要素。如图：</p>
+								<p class="border" style="width:440px;">
+									<img src="img/margin1.gif" width="413" height="413" alt="盒子模型" />
+								</p>
+								<p>
+									图中最内部的框是元素的实际内容，也就是元素框，紧挨着元素框外部的是内边距padding，其次是边框（border），然后最外层是外边距（margin），整个构成了框模型。通常我们设置的背景显示区域，就是内容、内边距、边框这一块范围。而外边距margin是透明的，不会遮挡周边的其他元素。
+								</p>
+								<p>
+									那么，元素框的总宽度 = 元素（element）的width + padding的左边距和右边距的值 + margin的左边距和右边距的值 + border的左右宽度；
+								</p>
+								<p>
+									元素框的总高度 = 元素（element）的height + padding的上下边距的值 + margin的上下边距的值 ＋ border的上下宽度。
+								</p>
+							</section>
+							<section>
+								<h2 class="herader">二、css 外边距合并（叠加）</h2>
+								<p>
+									两个上下方向相邻的元素框垂直相遇时，外边距会合并，合并后的外边距的高度等于两个发生合并的外边距中较高的那个边距值，如图：
+								</p>
+								<p class="border" style="width:530px;">
+									<img src="img/margin2.png" width="518" height="334" alt="盒子模型" />
+									<img src="img/margin3.png" width="524" height="221" alt="盒子模型" />
+								</p>
+								<p>
+									比较容易理解，所以在页面中有时候遇到实际情况是需要考虑这个因素的。当然外边距合并其实也有存在的意义，如下图：
+								</p>
+								<p class="border" style="width:560px;">
+									<img src="img/margin4.png" width="549" height="375" alt="盒子模型" />
+								</p>
+								<p>如果在实际开发中，不需要外边距合并。也可能盒子塌陷。一般以下解决方案：</p>
+								<ul>
+									<li>给父级添加边框 border:1px solid transparent 或者  border-top:1px solid transparent</li>
+									<li>给父级添加内边距 padding:1px  或者  padding-top:1px solid transparent</li>
+									<li>给父级添加 overflow:hidden </li>
+								</ul>
+							</section>
+							<section>
+								<h2 class="herader">三、css3中box-sizing属性</h2>
+								<p>box-sizing属性值为：content-box ，border-box  ，inherit。我也在网上也翻阅了很多资料。发现盒子模型分两种：一种是W3C盒子模型，一种是IE盒子模型。也就是默认盒子模型和怪异盒子模型。</p>
+								<p>1，W3C定义的盒子模型包括margin、border、padding、content ，元素的width=content的宽度</p>
+								<p class="border" style="border:none;">
+									<img src="img/margin5.bmp" width="578" height="331" alt="盒子模型" />
+								</p>
+								<p>2，IE盒子模型与W3C的盒子模型唯一区别就是元素的宽度，元素的width=content+padding+border</p>
+								<p class="border" style="border:none;">
+									<img src="img/margin6.bmp" width="578" height="331" alt="盒子模型" />
+								</p>
+								<p>
+									W3C盒模型与IE盒模型的标准不同，从而影响开发者。其实根据自己的需求来选择盒模型这样最好。在不断的发展完善中W3C也做出了改进。就在CSS3中新增了一个样式box-sizing，也刚好对应这两个盒模型。下面的案例也更直观的了解盒子模型。
+								</p>
+								<p>（1） content-box  元素的width=content+padding+border</p>
+								<p>
+	<pre>
+	.box{
+	    box-sizing:content-box;
+	    width:200px;
+	    padding:10px;
+	    border:15px solid #eee;
+	 }</pre>
+
+								</p>
+								<p class="border">
+									<img src="img/margin7.png" width="237"style="display:block;margin:0 auto;"/>
+								</p>
+								<p>（2） border-box   元素的width=width（用样式指定的宽度）</p>
+								<p>
+								<p>
+			<pre>
+	.box {
+	   box-sizing:border-box;
+	   width:200px;
+	   padding:10px;
+	   border:15px solid #eee;
+	 }</pre>
+								</p>
+								<p class="border">
+									<img src="img/margin8.png" style="display:block;margin:0 auto;"/>
+								</p>
+								<p>（3）inherit , 规定应从父元素继承 box-sizing 属性的值</p>
+							</section>
+							<section>
+								<h2 class="herader">四、关于margin属性理解</h2>
+								<p>1.对于行级元素，margin-top和margin-bottom对于上下元素无效，margin-left和margin-right有效</p>
+								<p>2.对于相邻的块级元素margin-bottom和margin-top 取值方式</p>
+								<ul>
+									<li> 1） 都是正数： 取最大值
+
+   距离=Math.max(margin-botton,margin-top)；</li>
+									<li>2） 都是负数： 取最小值
+
+   距离=Math.min(margin-botton,margin-top)；</li>
+									<li> 3）上面是正数，下面是负数或者 上面是负数，下面是正数： </li>
+									<li style="list-style:none;text-indent:6em;">正负相加
+
+   距离=margin-botton+margin-top；</li>
+								</ul>
+							</section>
+						</div>
+					</div>
+					<!--PC和WAP自适应版-->
+			<!--PC版-->
+<div id="SOHUCS" sid="article2"></div>
+<script charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/changyan.js" ></script>
+<script type="text/javascript">
+window.changyan.api.config({
+appid: 'cyt2iVNgp',
+conf: 'prod_0f07b946489cdfe174fd8b1a7ecf74aa'
+});
+</script>
+				</div>
+				<div class="con-column fr ">
+					<ul class="col-list">
+						<li>
+							<div class="col-wrap bs">
+								<h3 class="col-wrap-title">
+									<i class="iconfont icon-tuijian"></i>
+									热门推荐
+								</h3>
+								<div class="wrap-popular bs">
+									<a href="article5.html"><i>1</i>移动端事件及点透问题</a>
+									<a href="article4.html"><i>2</i>如何减少JS的全局变量污染</a>
+									<a href="article3.html"><i>3</i>函数内部对象 arguments</a>
+									<a href="article2.html"><i class="ico">4</i>盒子模型及常见的问题</a>
+									<a href="article1.html"><i class="ico">5</i>html5的新增标签</a>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="col-wrap bs">
+								<h3 class="col-wrap-title">
+									<i class="iconfont icon-wenzhang"></i>
+									最近文章
+								</h3>
+								<div class="wrap-latest wrap-popular">
+									<a href="../404/erroe.html">html5的新增标签</a>
+									<a href="../404/erroe.html">html5的新增标签</a>
+									<a href="../404/erroe.html">html5的新增标签</a>
+									<a href="../404/erroe.html">html5的新增标签</a>
+									<a href="../404/erroe.html">html5的新增标签</a>
+									<a href="../404/erroe.html">html5的新增标签</a>
+									<a href="../404/erroe.html">html5的新增标签</a>
+									<a href="../404/erroe.html">html5的新增标签</a>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="col-wrap bs">
+								<h3 class="col-wrap-title">
+									<i style="padding-left:3px;font-size:24px;"class="iconfont icon-rili"></i>
+									日历
+								</h3>
+								<div id="tb"></div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- 底部 -->
+	<div id="foot">
+		<span>
+			Copyright © 2017  wfyweb.com | 豫ICP备16041179号 | Powered by <a href="javascript:;">Handsome</a>
+		</span>
+	</div>
+	<div id="return">
+		<div class="re_bg"></div>
+		<p>返回顶部</p>
+	</div>
+
+	<!-- 导航 -->
+	<script type="text/javascript" src="../js/daohang.js"></script>
+	<!-- 日历 -->
+	<script type="text/javascript" src="../js/rili.js"></script>
+	<script type="text/javascript">
+		var tb = document.getElementById('tb');
+		calendar();
+	</script>
+	<!-- 返回顶部 -->
+	<script type="text/javascript" src="../js/return.js"></script>
+</body>
+</html>

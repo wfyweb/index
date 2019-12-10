@@ -1,0 +1,263 @@
+            *{
+              padding: 0;
+              margin:0;
+            }
+            body,html{
+              width: 100%;
+              height: 100%;
+              margin:0;
+              padding:0;
+              overflow: hidden;
+            }
+            #page-pic{
+              list-style: none;
+              width: 100%;
+              height: 100%;
+              max-width: 768px;
+              margin:auto;
+              transition:1s;
+              transform: translateY(0%);
+            }
+            #page-pic li {
+              width: 100%;
+              height:100%;
+            }
+            #page-pic li img{
+              width: 100%;
+              height:100%;
+            }
+            #music .music-Bg{
+              position: fixed;
+              top:20px;
+              right:0px;
+              width: 58px;
+              height:58px;
+            }
+             #music .music-Bg.music-spread{
+              background:url('../images/music_c0fda01.gif') no-repeat center center;
+              background-size:58px 58px;
+            }
+
+             #music .music-Bg .music-bg{
+              position: absolute;
+              width: 35px;
+              height:35px;
+              top:15px;
+              right:15px;
+              background:url('../images/music_off_8d94020.png');
+              background-size:100% 100%;
+              z-index:-1;
+             }
+              #music .music-Bg .music-bg.music-bg-auto{
+                -webkit-animation: musAuto 4s linear infinite;
+                -moz-animation: musAuto 4s linear infinite;
+                -ms-animation: musAuto 4s linear infinite;
+                -o-animation: musAuto 4s linear infinite;
+                animation: musAuto 4s linear infinite;
+              }
+              @-webkit-keyframes musAuto{
+                0%{transform: rotate(0deg)}
+                100%{transform: rotate(360deg)}
+              }
+              @-moz-keyframes musAuto{
+                0%{transform: rotate(0deg)}
+                100%{transform: rotate(360deg)}
+              }
+              @-mz-keyframes musAuto{
+                0%{transform: rotate(0deg)}
+                100%{transform: rotate(360deg)}
+              }
+              @-o-keyframes musAuto{
+                0%{transform: rotate(0deg)}
+                100%{transform: rotate(360deg)}
+              }
+              @keyframes musAuto{
+                0%{transform: rotate(0deg)}
+                100%{transform: rotate(360deg)}
+              }
+              .next{
+                position:fixed;
+                bottom: 30px;
+                left:50%;
+                width: 200px;
+                height: 300px;
+                text-align:center;
+                margin:-7px 0 0 -100px;
+                -webkit-animation: nextMove 2s ease-in-out infinite;
+                -moz-animation: nextMove 2s ease-in-out infinite;
+                -ms-animation: nextMove 2s ease-in-out infinite;
+                -o-animation: nextMove 2s ease-in-out infinite;
+                animation: nextMove 2s ease-in-out infinite;
+              }
+              .next-good{
+                position:fixed;
+                bottom: 30px;
+                left:50%;
+                width: 200px;
+                height: 45px;
+                text-align:center;
+                margin:-7px 0 0 -100px;
+                -webkit-animation: nextMove 2s ease-in-out ;
+                -moz-animation: nextMove 2s ease-in-out ;
+                -ms-animation: nextMove 2s ease-in-out ;
+                -o-animation: nextMove 2s ease-in-out ;
+                animation: nextMove 2s ease-in-out ;
+              }
+              .next .next-pic{
+                 width: 28px;
+                 height: 18px;
+                 transform: rotate(-90deg);
+                 font-size: 30px;
+                 color:#eee;
+                 text-shadow: 0 0 2px #000;
+                 margin:200px auto;
+              }
+              .good{
+                position: absolute;
+                top:20%;
+                left:50%;
+                margin-left: -25%;
+                width: 100%;
+                color:#fff;
+                line-height: 30px;
+                font-size: 60px;
+                font-family:Lobster;
+                text-shadow: 2px 2px 2px #333;
+                opacity:1;
+              }
+              .good p{
+                  line-height: 60px;
+                  width: 100%;
+                  opacity:0;
+              }
+              .good p.first-p{
+                  transform: translateX(-300px);
+              }
+              .good p.firstMove{
+                  transform: translateX(-300px);
+                  -webkit-animation: firstMove .8s ease-out  forwards;
+                  -moz-animation: firstMove .8s ease-out  forwards;
+                  -ms-animation: firstMove .8s ease-out  forwards;
+                  -o-animation: firstMove .8s ease-out  forwards;
+                  animation: firstMove .8s ease-out  forwards;
+              }
+              @-webkit-keyframes firstMove{
+                0%{opacity:0;transform: translateX(-300px);}
+                100%{opacity:1;transform: translateX(0px);}
+              }
+              @-moz-keyframes firstMove{
+                0%{opacity:0;transform: translateX(-300px);}
+                100%{opacity:1;transform: translateX(0px);}
+              }
+              @-ms-keyframes firstMove{
+                0%{opacity:0;transform: translateX(-300px);}
+                100%{opacity:1;transform: translateX(0px);}
+              }
+              @-o-keyframes firstMove{
+                0%{opacity:0;transform: translateX(-300px);}
+                100%{opacity:1;transform: translateX(0px);}
+              }
+              @keyframes firstMove{
+                0%{opacity:0;transform: translateX(-300px);}
+                100%{opacity:1;transform: translateX(0px);}
+              }
+              .good p.last-p{
+                  float: right;
+                  margin-right: -30%;
+                  transform: translateX(300px);
+              }
+              .good p.lastMove{
+                  float: right;
+                  margin-right: -30%;
+                  transform: translateX(300px);
+                  -webkit-animation: lastMove .8s ease-out  forwards;
+                  -moz-animation: lastMove .8s ease-out  forwards;
+                  -ms-animation: lastMove .8s ease-out  forwards;
+                  -o-animation: lastMove .8s ease-out  forwards;
+                  animation: lastMove .8s ease-out  forwards;
+              }
+              @-webkit-keyframes lastMove{
+                0%{opacity:0;transform: translateX(300px);}
+                100%{opacity:1;transform: translateX(0px);}
+              }
+              @-moz-keyframes lastMove{
+                0%{opacity:0;transform: translateX(300px);}
+                100%{opacity:1;transform: translateX(0px);}
+              }
+              @-ms-keyframes lastMove{
+                0%{opacity:0;transform: translateX(300px);}
+                100%{opacity:1;transform: translateX(0px);}
+              }
+              @-o-keyframes lastMove{
+                0%{opacity:0;transform: translateX(300px);}
+                100%{opacity:1;transform: translateX(0px);}
+              }
+              @keyframes lastMove{
+                0%{opacity:0;transform: translateX(300px);}
+                100%{opacity:1;transform: translateX(0px);}
+              }
+              .goodMove{
+                position: absolute;
+                top:20%;
+                left:50%;
+                margin-left: -25%;
+                width: 100%;
+                color:#fff;
+                line-height: 30px;
+                font-size: 48px;
+                font-family:Lobster;
+                text-shadow: 2px 2px 2px #333;
+                opacity:0;
+                -webkit-animation: nextGood 1s ease-out  forwards;
+                -moz-animation: nextGood 1s ease-out  forwards;
+                -ms-animation: nextGood 1s ease-out  forwards;
+                -o-animation: nextGood 1s ease-out  forwards;
+                animation: nextGood 1s ease-out  forwards;
+
+              }
+              @-webkit-keyframes nextMove{
+                0%{opacity: 0;transform: translateY(0);}
+                50%{opacity:1;transform: translateY(-20px);}
+                75%{opacity:0;transform: translateY(-20px);}
+                100%{opacity:0;transform: translateY(0);}
+              }
+              @-moz-keyframes nextMove{
+                0%{opacity: 0;transform: translateY(0);}
+                50%{opacity:1;transform: translateY(-20px);}
+                75%{opacity:0;transform: translateY(-20px);}
+                100%{opacity:0;transform: translateY(0);}
+              }
+              @-ms-keyframes nextMove{
+                0%{opacity: 0;transform: translateY(0);}
+                50%{opacity:1;transform: translateY(-20px);}
+                75%{opacity:0;transform: translateY(-20px);}
+                100%{opacity:0;transform: translateY(0);}
+              }
+             @-o-keyframes nextMove{
+                 0%{opacity: 0;transform: translateY(40px);}
+                100%{opacity:1;transform: translateY(0);}
+              }
+              @keyframes nextMove{
+                 0%{opacity: 0;transform: translateY(40px);}
+                100%{opacity:1;transform: translateY(0);}
+              }
+              @-webkit-keyframes nextGood{
+                 0%{opacity: 0;transform: translateY(40px);}
+                100%{opacity:1;transform: translateY(0);}
+              }
+              @-moz-keyframes nextGood{
+                 0%{opacity: 0;transform: translateY(40px);}
+                100%{opacity:1;transform: translateY(0);}
+              }
+              @-ms-keyframes nextGood{
+                0%{opacity: 0;transform: translateY(40px);}
+                100%{opacity:1;transform: translateY(0);}
+              }
+             @-o-keyframes nextGood{
+                0%{opacity: 0;transform: translateY(40px);}
+                100%{opacity:1;transform: translateY(0);}
+              }
+              @keyframes nextGood{
+                0%{opacity: 0;transform: translateY(40px);}
+                100%{opacity:1;transform: translateY(0);}
+              }

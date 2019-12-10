@@ -1,0 +1,60 @@
+
+*{margin:0;padding:0;list-style-type:none;font-family:"Microsoft YaHei";}
+body{margin:0;padding:0;background:#f1f1f1;-moz-user-select:none;width: 100%;height: 100%;}
+body{
+            background-image: url(http://s.zcart.net/wp-content/themes/flat/assets/img/default-background.jpg);
+            background-repeat: repeat;
+            background-position: top left;
+            background-attachment: scroll;
+            -webkit-background-size: cover;
+            background-size: cover;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+a{text-decoration:none;font-family:"Microsoft YaHei";}
+.flex{display:-webkit-flex;display:-moz-flex;display:-ms-flex;display:-o-flex;display:flex;}
+.fl{float:left;}
+.fr{float:right;}
+.bor{border:1px solid #333;}
+.clearfix:after{content:'';display:block;clear:both;}
+.bs{box-sizing:border-box;-moz-box-sizing:border-box;/* Firefox */
+-webkit-box-sizing:border-box;/* Safari */
+}
+.clearfix:after{content:'';display:block;clear:both;}
+/* 头部 */
+#head{position:fixed;top:0;width:100%;height:50px;background:#222;z-index:999;}
+#head .head_list{width:900px;margin:0 auto;padding:0 118px;}
+#head .head_list li{border-radius:10px;float:left;margin-left:25px;margin-top:5px;padding:5px 20px;background:#222;}
+#head .head_list li a{display:block;height:30px;font:18px/30px 'Microsoft YaHei';color:#9d9d9d;overflow:hidden;transition:.4s;}
+#head .head_list li.alist{box-shadow:0 0 3px #fff;}
+#head .head_list li:hover a{color:#fff;}
+.items a{
+			  text-transform: uppercase;
+			  font-size: 20px;
+			  font-weight:400;
+			  overflow: hidden;
+			}
+			.items a span{
+			  display: inline-block;
+			  position:relative;
+			  transition:0.5s;
+			  -webkit-transition:0.5s;
+			  -moz-transition:0.5s;
+
+			}
+			.items a span:after{
+			  content: attr(data-hover);
+			  position: absolute;
+			  top: -30px;
+			  left:0;
+			  transform: translate3d(0,0,0);
+				-moz-transform: translate3d(0,0,0);
+				-webkit-transform: translate3d(0,0,0);
+			}
+			.items a:hover span,
+			.items a:focus span {
+				transform: translateY(30px);
+			  -webkit-transform: translateY(30px);
+			  -moz-transform: translateY(30px);
+			}

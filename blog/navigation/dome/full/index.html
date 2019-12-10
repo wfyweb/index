@@ -1,0 +1,171 @@
+
+<!doctype html>
+<!--
+
+  .--,       .--,
+ ( (  \.---./  ) )
+  '.__/o   o\__.'
+     {=    =}
+      >  -  <
+     /       \
+    //       \
+   //|   .   |\
+   "'\       /'"_.-~`'-.
+      \  _  /--'
+    ___)( )(___
+   (((__) (__)))
+
+   the valiant knights of programming who toil away.
+
+-->
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Handsome</title>
+  <style type="text/css">
+    *{
+      margin:0;
+      padding:0;
+    }
+    body,html{ height: 100%;}
+    body{overflow:hidden;}
+    ul,li{ list-style: none; }
+    #wrap{width: 100%;height: 100%;transition:.5s;}
+    #wrap .con{width: 100%;height: 100%;position: relative;}
+
+    #wrap .con .log{position: absolute;top:20px;left:20px; width:242px;height: 61px;background: url(img/logo.png);}
+    #slide{width: 20px;height: 160px;position: fixed;top:50%;left:20px;margin-top: -130px;}
+    #slide ul li {width: 16px;height: 16px;border-radius:50%;border:2px solid #fff;margin:4px 0; cursor:pointer;}
+    #slide ul li.ative{background:#f60;}
+
+    #wrap .con .page{transition:1.2s}
+    #wrap .con1 .page{width:694px;height: 274px;background: url(img/1-2.png);background-size:100% 100%; position:absolute;top:0;left:0;right:0;bottom: 0;margin:auto;transform: scale(0) rotate(0deg);}
+    #wrap .con2 .page{width:639px;height: 450px;background: url(img/2-2.png);background-size:100% 100%; position:absolute;top:90%;left:0;right:0;bottom: 0;margin:0 auto;opacity:0;}
+    #wrap .con3 .page{width:570px;height: 220px;background: url(img/3-2.png);background-size:100% 100%; position:absolute;top:27%;left:-999px;right:0;bottom: 0;opacity:0;}
+    #wrap .con4 .page{width:400px;height: 360px;background: url(img/4-2.png);background-size:100% 100%; position:absolute;top:37%;right:-405px;opacity:0;}
+    #wrap .con5 .page{width:672px;height: 204px;background: url(img/5-2.png);background-size:100% 100%; position:absolute;top:-250px;left:0;right:0;bottom: 0;margin:0 auto;opacity:0;}
+    #wrap .con6 .page{width:758px;height:307px;background: url(img/6-2.png);background-size:100% 100%; position:absolute;top:37%;right:-759px;opacity:0;}
+    #wrap .con7 .page:nth-child(1){width:840px;height:311px;background: url(img/7-2.png);background-size:100% 100%; position:absolute;top:37%;left:-899px;opacity:0;}
+    #wrap .con7 .page:nth-child(2){width:300px;height:470px;background: url(img/7-3.png)no-repeat center;background-size:100% 100%; position:absolute;top:27%;right:-200px;opacity:0;}
+
+    #wrap .con1 .on{ transform: scale(0.8) rotate(360deg); }
+    #wrap .con2 .on{top:30%;opacity:1;}
+    #wrap .con3 .on{left:74px;opacity:1;}
+    #wrap .con4 .on{right:0;opacity:1;}
+    #wrap .con5 .on{top:80px;opacity:1;}
+    #wrap .con6 .on{right:0;opacity:1;}
+    #wrap .con7 .on:nth-child(1){left:75px;opacity:1;}
+    #wrap .con7 .on:nth-child(2){right:70px;opacity: 1;transition-delay: 1s}
+  </style>
+  <script src="http://cdn.bootcss.com/jquery/1.12.3/jquery.min.js"></script>
+</head>
+<body>
+    <div id="wrap">
+        <div class="con con1">
+            <div class="page"></div>
+        </div>
+        <div class="con con2">
+            <div class="page"></div>
+        </div>
+        <div class="con con3">
+            <div class="page"></div>
+        </div>
+        <div class="con con4">
+            <div class="page"></div>
+        </div>
+        <div class="con con5">
+            <div class="page"></div>
+        </div>
+        <div class="con con6">
+            <div class="page"></div>
+        </div>
+        <div class="con con7">
+            <div class="page"></div>
+            <div class="page"></div>
+        </div>
+    </div>
+    <div id="slide">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+  <script type="text/javascript" src="js/jquery.mousewheel.js"></script>
+  <script type="text/javascript">
+        var $li = $(' #slide ul li');
+        var $con = $('.con');
+        // 初始化
+        (function(){
+            //刷新回顶部 ,第一屏增加class
+            setTimeout(function(){
+                $(window).scrollTop(0);
+                $('.con1 .page').addClass('on');
+            },200);
+            $li.eq(0).addClass('ative');
+            //$('.con page1').eq(0).addClass('on');
+            $con.append('<div class="log"></div>')
+            $con.each(function(i){
+                var str = '';
+                str = (i!=1)? 'url(img/'+(i+1)+'.jpg) no-repeat center / cover':'#D97F5C';
+            /*    if(i!=1){
+                    str ='url(img/'+(i+1)+'.jpg) no-repeat center / cover';
+                }else{
+                    str ='#D97F5C';
+                };*/
+                 $(this).css('background',str);
+            })
+        })();
+
+        //页面滚动
+        (function(){
+            var index = 0;
+            var length = $li.size();
+            console.log(length,1)
+            var wH = $(window).height();
+            var nowTime = new Date();
+            $(window).resize(function(){
+                wH = $(window).height();
+            })
+            $li.click(function(){
+                index = $(this).index();
+                move();
+            });
+            $(document).mousewheel(function(){
+                if(new Date()-nowTime>500){
+                    //console.log(arguments)
+                    nowTime = new Date();
+                    var d = arguments[1];
+                    if(d<0){
+                        index++;
+                        index%=length;
+                        move();
+                    }else{
+                        index--;
+                        if(index<0)index=length-1;
+                        move();
+                    }
+                }
+            })
+
+            function move(){
+                $li.eq(index).addClass('ative').siblings().removeClass('ative');
+                // $('body,html').animate({
+                //     scrollTop:index*wH
+                // },500);
+                $('#wrap').css({
+                    transform:'translateY(-'+index+'00%)'
+                })
+                $con.eq(index).find('.page').addClass('on').parent().siblings().find('.page').removeClass('on');
+            };
+        })()
+
+
+
+  </script>
+</body>
+</html>
