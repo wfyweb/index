@@ -1,3 +1,3 @@
 # blog
 
-http://wfyweb.com/
+https://wfyweb.github.io/blog/
