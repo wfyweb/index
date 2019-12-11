@@ -1,3 +1,2 @@
 # blog
-
-https://wfyweb.github.io/blog/
+[预览](wfyweb.com)
