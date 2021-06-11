@@ -1,2 +1,2 @@
 # blog
-[预览](http://wfyweb.com)
+[预览](https://wfyweb.github.io/.com)
